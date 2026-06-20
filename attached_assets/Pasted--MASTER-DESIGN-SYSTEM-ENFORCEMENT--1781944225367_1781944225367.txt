@@ -1,0 +1,215 @@
+====================================================
+MASTER DESIGN SYSTEM ENFORCEMENT
+====================================================
+
+IMPORTANT:
+
+Use the provided UI/UX presentation image as the primary visual design reference for the entire YUNORA website.
+
+The design language shown in the reference image must be applied consistently across ALL pages.
+
+This is now the official YUNORA Design System.
+
+====================================================
+DESIGN CONSISTENCY RULE
+====================================================
+
+Every page must follow the same:
+
+• Layout Quality
+• Visual Hierarchy
+• Typography Style
+• Card Design
+• Button Design
+• Animation Style
+• Spacing System
+• Border Radius
+• Shadows
+• Glass Effects
+• Hover Effects
+• Product Presentation
+• Category Presentation
+
+No page should feel different from another.
+
+The entire website must feel like one premium luxury ecosystem.
+
+====================================================
+APPLY TO ALL WEBSITE PAGES
+====================================================
+
+The following pages must visually match the provided design reference:
+
+• Home
+• Shop
+• Categories
+• Collections
+• Product Details
+• Search Results
+• Wishlist
+• Cart
+• Checkout
+• Order Success
+• Track Order
+• My Profile
+• My Orders
+• Saved Products
+• Warranty Verification
+• Warranty Claims
+• Feedback
+• About Us
+• Manufacturing Excellence
+• Become Dealer
+• Dealer Registration
+• Blogs
+• Blog Details
+• Contact
+• FAQ
+• Store Locator
+• Login
+• Signup
+• Forgot Password
+• Reset Password
+• Privacy Policy
+• Terms & Conditions
+• Shipping Policy
+• Return Policy
+• Admin Dashboard
+
+All pages must look like part of the same premium brand.
+
+====================================================
+CARD SYSTEM
+====================================================
+
+Every card throughout the website must use:
+
+• Premium Shadows
+• Smooth Border Radius
+• Luxury White Space
+• Consistent Padding
+• Elegant Hover Effects
+
+No outdated cards.
+
+No template cards.
+
+====================================================
+BUTTON SYSTEM
+====================================================
+
+All buttons must use the same design language.
+
+Features:
+
+• Premium Glass Effect
+• Soft Hover Animation
+• Smooth Transitions
+• Luxury Feel
+
+Primary Buttons:
+
+Accent Color
+
+Secondary Buttons:
+
+Glass Style
+
+====================================================
+FORM SYSTEM
+====================================================
+
+All forms must be redesigned.
+
+Examples:
+
+• Login
+• Signup
+• Checkout
+• Warranty Registration
+• Feedback
+• Contact Form
+• Dealer Registration
+
+Forms must feel:
+
+• Premium
+• Spacious
+• Elegant
+• Easy To Use
+
+====================================================
+PROFILE & ACCOUNT PAGES
+====================================================
+
+Profile pages must not look like basic dashboards.
+
+Create premium account experiences.
+
+Use:
+
+• Beautiful Side Navigation
+• Luxury Cards
+• Clean Information Layout
+• Elegant Icons
+• Proper Spacing
+
+Similar quality throughout:
+
+• Profile
+• Orders
+• Wishlist
+• Warranty
+• Feedback
+
+====================================================
+ADMIN PANEL DESIGN
+====================================================
+
+Admin panel must also follow the same premium design language.
+
+Do not create a generic admin dashboard.
+
+Use:
+
+• Modern Analytics
+• Premium Cards
+• Better Graphs
+• Elegant Tables
+• Luxury UI
+
+====================================================
+ANIMATION CONSISTENCY
+====================================================
+
+Use one animation system across the entire website.
+
+Examples:
+
+• Fade In
+• Fade Up
+• Image Reveal
+• Hover Lift
+• Soft Zoom
+
+Avoid random animations.
+
+Avoid inconsistent motion.
+
+====================================================
+FINAL DESIGN REQUIREMENT
+====================================================
+
+Every single page must feel like it belongs to the same luxury furnishing brand.
+
+If a user opens any page independently, they should instantly recognize it as part of YUNORA.
+
+No page should feel unfinished.
+
+No page should feel like a template.
+
+No page should feel different from the rest of the website.
+
+Maintain the exact same premium design quality, layout standards, spacing standards, typography standards, and visual hierarchy shown in the provided reference image.
+
+The entire website must feel like a world-class luxury furnishing platform that is superior to MyTrident, D'Decor, Urban Ladder, RoyalOak, and other furnishing brands.

@@ -28,8 +28,9 @@ export default function Footer() {
               <li><Link href="/shop" className="hover:text-primary transition-colors">Shop All</Link></li>
               <li><Link href="/collections" className="hover:text-primary transition-colors">Collections</Link></li>
               <li><Link href="/manufacturing" className="hover:text-primary transition-colors">Manufacturing</Link></li>
-              <li><Link href="/blog" className="hover:text-primary transition-colors">Blogs</Link></li>
-              <li><Link href="/dealer" className="hover:text-primary transition-colors">Become a Dealer</Link></li>
+              <li><Link href="/blogs" className="hover:text-primary transition-colors">Blogs</Link></li>
+              <li><Link href="/become-dealer" className="hover:text-primary transition-colors">Become a Dealer</Link></li>
+              <li><Link href="/store-locator" className="hover:text-primary transition-colors">Store Locator</Link></li>
             </ul>
           </div>
 
@@ -37,11 +38,11 @@ export default function Footer() {
             <h3 className="font-serif text-xl font-semibold mb-6">Customer Service</h3>
             <ul className="space-y-3 font-sans text-sm text-[#F3EFE9]/80 font-light">
               <li><Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
-              <li><Link href="/shipping" className="hover:text-primary transition-colors">Shipping & Delivery</Link></li>
-              <li><Link href="/returns" className="hover:text-primary transition-colors">Returns & Exchanges</Link></li>
-              <li><Link href="/track" className="hover:text-primary transition-colors">Track Order</Link></li>
-              <li><Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
+              <li><Link href="/shipping-policy" className="hover:text-primary transition-colors">Shipping Policy</Link></li>
+              <li><Link href="/return-policy" className="hover:text-primary transition-colors">Return Policy</Link></li>
+              <li><Link href="/track-order" className="hover:text-primary transition-colors">Track Order</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -50,7 +51,7 @@ export default function Footer() {
             <ul className="space-y-4 font-sans text-sm text-[#F3EFE9]/80 font-light">
               <li className="flex gap-3">
                 <MapPin className="h-5 w-5 shrink-0 text-primary" />
-                <span>123 Luxury Lane, Panipat, Haryana 132103, India</span>
+                <span><Link href="/contact" className="hover:text-primary transition-colors">123 Luxury Lane, Panipat, Haryana 132103, India</Link></span>
               </li>
               <li className="flex gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-primary" />
@@ -68,7 +69,6 @@ export default function Footer() {
         <div className="pt-8 border-t border-[#F3EFE9]/10 flex flex-col md:flex-row items-center justify-between gap-4 font-sans text-xs text-[#F3EFE9]/60">
           <p>&copy; {new Date().getFullYear()} YUNORA Luxury Furnishing. All rights reserved.</p>
           <div className="flex gap-2 items-center opacity-70">
-            {/* Payment icons placeholder */}
             <span>VISA</span>
             <span>MASTERCARD</span>
             <span>UPI</span>

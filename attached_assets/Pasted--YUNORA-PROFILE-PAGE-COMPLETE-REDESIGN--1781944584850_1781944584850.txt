@@ -1,0 +1,200 @@
+====================================================
+YUNORA PROFILE PAGE COMPLETE REDESIGN
+====================================================
+
+IMPORTANT:
+
+The current profile page is rejected.
+
+Redesign the complete account and profile experience.
+
+Do not create a basic dashboard.
+
+Create a premium luxury account experience.
+
+The profile page must match the design quality of the rest of the YUNORA website.
+
+====================================================
+PROFILE PAGE STRUCTURE
+====================================================
+
+Create a modern two-column layout.
+
+Left Sidebar:
+
+• Dashboard
+• My Profile
+• My Orders
+• Track Orders
+• Wishlist
+• Saved Products
+• Cart
+• Warranty Center
+• Feedback
+• Addresses
+• Coupons
+• Rewards
+• Security
+• Logout
+
+Right Content Area:
+
+Dynamic content based on selected menu.
+
+====================================================
+MY PROFILE
+====================================================
+
+User can:
+
+• Change Profile Photo
+• Update Name
+• Update Mobile Number
+• Update Email
+• Update Address
+• Update City
+• Update State
+• Update PIN Code
+
+All changes must save to database.
+
+====================================================
+PROFILE DASHBOARD
+====================================================
+
+Show live user statistics.
+
+Examples:
+
+Total Orders
+
+Wishlist Items
+
+Warranty Products
+
+Reward Points
+
+Recent Activity
+
+Recent Orders
+
+Recent Warranty Registrations
+
+====================================================
+MY ORDERS
+====================================================
+
+Display:
+
+• Product Image
+• Product Name
+• Order Number
+• Order Date
+• Payment Status
+• Delivery Status
+
+Actions:
+
+• Track Order
+• Download Invoice
+• Reorder
+• Raise Support Ticket
+
+====================================================
+WISHLIST
+====================================================
+
+Users can:
+
+• Add Products
+• Remove Products
+• Move To Cart
+
+Wishlist data must remain after logout.
+
+====================================================
+WARRANTY CENTER
+====================================================
+
+Users can:
+
+• Register Product Warranty
+• View Warranty Status
+• Upload Invoice
+• Download Warranty Certificate
+• Raise Warranty Claim
+
+====================================================
+ADDRESS MANAGEMENT
+====================================================
+
+Users can:
+
+• Add Address
+• Edit Address
+• Delete Address
+• Set Default Address
+
+Support Multiple Addresses.
+
+====================================================
+SECURITY SETTINGS
+====================================================
+
+Features:
+
+• Change Password
+• OTP Verification
+• Login Activity
+• Active Sessions
+• Logout From All Devices
+
+====================================================
+LOGOUT SYSTEM
+====================================================
+
+Logout must work properly.
+
+After logout:
+
+• Session cleared
+• Token removed
+• User redirected to homepage
+
+Protected pages must not be accessible.
+
+====================================================
+PROFILE DESIGN REQUIREMENTS
+====================================================
+
+Use:
+
+• Glassmorphism
+• Premium Cards
+• Elegant Icons
+• Luxury Typography
+• Soft Animations
+• Spacious Layout
+• Premium Shadows
+
+The profile page should feel like a premium luxury brand experience.
+
+====================================================
+FINAL REQUIREMENT
+====================================================
+
+The profile page must look better than:
+
+• Amazon
+• Myntra
+• Urban Ladder
+• Pepperfry
+
+Every feature must be fully functional.
+
+No dummy buttons.
+
+No fake data.
+
+Everything must be connected to real backend APIs and database.
+====================================================
