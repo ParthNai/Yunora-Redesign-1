@@ -1,0 +1,130 @@
+====================================================
+YUNORA CONTACT US PAGE COMPLETE REDESIGN
+====================================================
+
+IMPORTANT:
+
+The Contact Us page must be fully functional.
+
+No dummy form.
+
+No fake buttons.
+
+Everything must work.
+
+====================================================
+CONTACT INFORMATION
+====================================================
+
+Display:
+
+Phone:
++91 96248 18530
+
+WhatsApp:
++91 96248 18530
+
+Instagram:
+@myyunora
+
+Store Location:
+Google Maps Integration
+
+====================================================
+CONTACT FORM
+====================================================
+
+Fields:
+
+Name
+
+Phone Number
+
+Email
+
+Subject
+
+Message
+
+Submit Button
+
+Requirements:
+
+• Form Validation
+• Success Messages
+• Error Handling
+• Database Storage
+• Admin Notifications
+
+====================================================
+WHATSAPP INTEGRATION
+====================================================
+
+One-click WhatsApp button.
+
+Pre-filled inquiry message.
+
+Mobile and desktop support.
+
+====================================================
+GOOGLE MAPS
+====================================================
+
+Embed live Google Maps.
+
+Features:
+
+• Open in Maps
+• Get Directions
+• Navigation
+
+====================================================
+INSTAGRAM
+====================================================
+
+Display Instagram section.
+
+Follow button.
+
+Open profile.
+
+Latest posts.
+
+====================================================
+DEALER INQUIRY
+====================================================
+
+Dedicated dealer inquiry form.
+
+Store in admin panel.
+
+====================================================
+FAQ QUICK HELP
+====================================================
+
+Common customer questions.
+
+Expandable accordion.
+
+====================================================
+ADMIN PANEL
+====================================================
+
+Admin should receive:
+
+• Contact Form Requests
+• Dealer Inquiries
+• Customer Queries
+
+Everything stored in database.
+
+====================================================
+FINAL REQUIREMENT
+====================================================
+
+The Contact Us page should feel like a premium luxury brand support center.
+
+Not a basic contact page.
+
+Everything must be responsive, fast, elegant, and fully functional.
+====================================================
