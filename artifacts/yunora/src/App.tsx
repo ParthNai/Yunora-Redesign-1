@@ -6,6 +6,7 @@ import { CartProvider } from "@/context/CartContext";
 
 import Home from "@/pages/Home";
 import Shop from "@/pages/Shop";
+import Categories from "@/pages/Categories";
 import Category from "@/pages/Category";
 import ProductDetail from "@/pages/ProductDetail";
 import Cart from "@/pages/Cart";
@@ -47,7 +48,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/shop" component={Shop} />
-      <Route path="/categories" component={Shop} />
+      <Route path="/categories" component={Categories} />
       <Route path="/collections" component={Shop} />
       <Route path="/new-arrivals" component={Shop} />
       <Route path="/best-sellers" component={Shop} />
