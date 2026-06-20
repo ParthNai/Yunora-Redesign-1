@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "jw8cm_iS2ZFsUtW2rppul"
+uri = "file://artifacts/yunora/src/assets/hero-1.png"
+type = "image"
+title = "Luxury living room hero image"
+
+[[generated]]
+id = "dshPl6NFWqppinnxu1DKj"
+uri = "file://artifacts/yunora/src/assets/cat-curtains.png"
+type = "image"
+title = "Luxury linen curtains"
+
+[[generated]]
+id = "alCOvMJZ2HBH2kBsdCevK"
+uri = "file://artifacts/yunora/src/assets/cat-bedsheets.png"
+type = "image"
+title = "Premium cotton bedsheets"
+
+[[generated]]
+id = "2xoOv9x5UpkKRblLubj0x"
+uri = "file://artifacts/yunora/src/assets/cat-cushions.png"
+type = "image"
+title = "Luxury decorative cushions"
+
+[[generated]]
+id = "W5ezSlPViONuT7rBL2qWa"
+uri = "file://artifacts/yunora/src/assets/cat-sofa-fabrics.png"
+type = "image"
+title = "Premium sofa fabric"
+
+[[generated]]
+id = "KyjmxFQafDT4dYgOQ7DOJ"
+uri = "file://artifacts/yunora/src/assets/cat-comforters.png"
+type = "image"
+title = "Luxury comforter bedding"
+
+[[generated]]
+id = "5_2A8IxoJvi0pDWB8tWRG"
+uri = "file://artifacts/yunora/src/assets/cat-home-decor.png"
+type = "image"
+title = "Luxury home decor objects"
+
+[[generated]]
+id = "Cq-fRxAVDp9rMVXmvR4Du"
+uri = "file://artifacts/yunora/src/assets/col-curated.png"
+type = "image"
+title = "Curated Collections banner"
+
+[[generated]]
+id = "x-gwEbXzRQDAMlBUe2XJy"
+uri = "file://artifacts/yunora/src/assets/col-bedding.png"
+type = "image"
+title = "Luxury Bedding banner"
+
+[[generated]]
+id = "UluEZf2x8bi5-3iN-x08Z"
+uri = "file://artifacts/yunora/src/assets/col-curtains.png"
+type = "image"
+title = "Premium Curtains banner"

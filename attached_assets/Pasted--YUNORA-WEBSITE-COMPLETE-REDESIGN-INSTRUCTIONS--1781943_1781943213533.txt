@@ -1,0 +1,331 @@
+====================================================
+YUNORA WEBSITE COMPLETE REDESIGN INSTRUCTIONS
+====================================================
+
+IMPORTANT:
+
+Do NOT create a new website.
+
+Do NOT rebuild from scratch.
+
+Do NOT remove existing functionality.
+
+Instead, redesign and upgrade the existing YUNORA website using the provided Mobile and Desktop reference designs.
+
+The current website structure already exists.
+
+Keep all existing backend functionality, database connections, authentication, payment integrations, warranty system, admin panel, profile system, cart system, wishlist system, search system, and product management system.
+
+Only redesign the UI, UX, layout, spacing, typography, animations, responsiveness, and visual hierarchy.
+
+====================================================
+CURRENT DESIGN STATUS
+====================================================
+
+The current website feels:
+
+• Too template-like
+• Too generic
+• Too orange
+• Poor spacing
+• Weak typography
+• Weak visual hierarchy
+• Poor category presentation
+• Poor product card design
+• Weak luxury feel
+
+This must be corrected.
+
+====================================================
+DESIGN GOAL
+====================================================
+
+The website must look like a premium international luxury furnishing brand.
+
+Reference Inspiration:
+
+• MyTrident
+• Zara Home
+• Pottery Barn
+• West Elm
+• Restoration Hardware
+
+The provided Mobile and Desktop mockups represent the desired direction.
+
+The final website should look even better.
+
+====================================================
+HEADER REDESIGN
+====================================================
+
+Create a premium luxury header.
+
+Top Announcement Bar:
+
+• Slim
+• Elegant
+• Auto-scrolling offers
+• Smooth animation
+
+Main Header:
+
+Left:
+YUNORA Logo
+
+Center:
+Navigation
+
+Right:
+Search
+Wishlist
+Account
+Cart
+
+Header must have:
+
+• Premium glass effect
+• Frosted blur
+• Luxury shadow
+• Sticky behavior
+• Smooth transitions
+
+====================================================
+COLOR SYSTEM
+====================================================
+
+Reduce orange usage significantly.
+
+Use:
+
+Primary:
+
+• Warm White
+• Soft Ivory
+• Luxury Beige
+
+Accent:
+
+• Soft Terracotta
+• Muted Coral
+• Light YUNORA Orange
+
+Orange should be used only as an accent.
+
+Never dominate the design.
+
+====================================================
+TYPOGRAPHY
+====================================================
+
+Luxury Typography Required.
+
+Headings:
+
+• Playfair Display
+• Cormorant Garamond
+
+Body:
+
+• Inter
+• Manrope
+
+Large luxury headings.
+
+Elegant spacing.
+
+Perfect alignment.
+
+====================================================
+HERO SECTION REDESIGN
+====================================================
+
+Replace current hero design.
+
+Use:
+
+• Full-width luxury interior image
+• Soft overlay
+• Elegant typography
+• Better spacing
+• Premium CTA buttons
+
+Layout similar to provided reference mockups.
+
+Hero should feel premium, expensive and elegant.
+
+====================================================
+CATEGORY SECTION REDESIGN
+====================================================
+
+Remove circular category cards completely.
+
+Create premium rectangular category cards.
+
+Each category card should contain:
+
+• Large luxury image
+• Gradient overlay
+• Category name
+• Product count
+• Hover animation
+
+Categories:
+
+• Curtains
+• Bedsheets
+• Cushions
+• Sofa Fabrics
+• Comforters
+• Home Decor
+
+====================================================
+PRODUCT CARD REDESIGN
+====================================================
+
+Replace all existing product cards.
+
+Create luxury ecommerce cards.
+
+Include:
+
+• Large image
+• Soft hover zoom
+• Premium spacing
+• Elegant typography
+• Quick view
+• Wishlist
+• Add to Cart
+
+Cards should look premium and minimal.
+
+====================================================
+SECTION REDESIGN
+====================================================
+
+Redesign all homepage sections.
+
+Examples:
+
+• Collections
+• Best Sellers
+• Featured Products
+• New Arrivals
+• Manufacturing
+• Instagram
+• Dealer Program
+
+Must use:
+
+• Better layouts
+• Better spacing
+• Better photography
+• Better hierarchy
+
+====================================================
+MANUFACTURING SECTION
+====================================================
+
+Current manufacturing section is not suitable.
+
+Replace with:
+
+Luxury textile manufacturing storytelling.
+
+Show:
+
+• Fabric craftsmanship
+• Textile expertise
+• Premium quality
+• Skilled artisans
+
+Use editorial style layouts.
+
+====================================================
+ANIMATIONS
+====================================================
+
+Use premium animations.
+
+Examples:
+
+• Fade Up
+• Fade In
+• Image Reveal
+• Luxury Scroll Effects
+• Soft Hover Effects
+
+Avoid:
+
+• Flashy effects
+• Gaming effects
+• Heavy animations
+
+====================================================
+MOBILE RESPONSIVE REDESIGN
+====================================================
+
+Mobile UI must match the provided mobile mockup style.
+
+Features:
+
+• Bottom navigation
+• Better spacing
+• Better cards
+• Premium mobile shopping experience
+• Smooth gestures
+
+====================================================
+DESKTOP RESPONSIVE REDESIGN
+====================================================
+
+Desktop UI must match the provided desktop mockup style.
+
+Features:
+
+• Large layouts
+• Premium spacing
+• Better product presentation
+• Luxury furnishing brand appearance
+
+====================================================
+IMPORTANT
+====================================================
+
+Do NOT break:
+
+• Login
+• Signup
+• Profile
+• Wishlist
+• Cart
+• Checkout
+• Razorpay
+• Warranty
+• Admin Panel
+• Search
+• Orders
+• Feedback
+
+All existing functionality must continue to work perfectly.
+
+Only improve and redesign the frontend.
+
+====================================================
+FINAL GOAL
+====================================================
+
+When a customer opens YUNORA, they should immediately feel:
+
+Luxury
+
+Premium
+
+Elegant
+
+Trustworthy
+
+Professional
+
+Modern Furnishing Brand
+
+The final website must look significantly better than the current version and closer to the provided reference mockups while maintaining full functionality.
