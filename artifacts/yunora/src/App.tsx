@@ -10,6 +10,7 @@ import Categories from "@/pages/Categories";
 import Category from "@/pages/Category";
 import Collections from "@/pages/Collections";
 import Collection from "@/pages/Collection";
+import NewArrivals from "@/pages/NewArrivals";
 import ProductDetail from "@/pages/ProductDetail";
 import Cart from "@/pages/Cart";
 import Wishlist from "@/pages/Wishlist";
@@ -53,7 +54,7 @@ function Router() {
       <Route path="/categories" component={Categories} />
       <Route path="/collections" component={Collections} />
       <Route path="/collection/:slug" component={Collection} />
-      <Route path="/new-arrivals" component={Shop} />
+      <Route path="/new-arrivals" component={NewArrivals} />
       <Route path="/best-sellers" component={Shop} />
       
       <Route path="/product/:id" component={ProductDetail} />
