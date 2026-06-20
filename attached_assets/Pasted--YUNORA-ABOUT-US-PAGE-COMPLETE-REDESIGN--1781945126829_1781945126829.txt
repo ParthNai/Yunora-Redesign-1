@@ -1,0 +1,131 @@
+====================================================
+YUNORA ABOUT US PAGE COMPLETE REDESIGN
+====================================================
+
+IMPORTANT:
+
+Create a world-class luxury About Us page.
+
+This page should tell the YUNORA story professionally.
+
+Not a simple text page.
+
+Not a boring company page.
+
+Create a premium brand storytelling experience.
+
+====================================================
+SECTIONS
+====================================================
+
+1. Hero Banner
+
+Luxury interior photography.
+
+Elegant headline.
+
+Smooth scroll animation.
+
+----------------------------------------------------
+
+2. Our Story
+
+Show:
+
+• Company Journey
+• Brand Story
+• Vision
+• Growth
+
+Beautiful image + content layout.
+
+----------------------------------------------------
+
+3. Founder Vision
+
+Premium quote section.
+
+Luxury card design.
+
+----------------------------------------------------
+
+4. Manufacturing Excellence
+
+Show:
+
+• Textile Craftsmanship
+• Fabric Expertise
+• Quality Standards
+• Premium Production
+
+----------------------------------------------------
+
+5. Why Choose YUNORA
+
+Feature cards.
+
+Examples:
+
+Premium Quality
+
+Luxury Design
+
+Warranty Support
+
+Fast Service
+
+Trusted Brand
+
+----------------------------------------------------
+
+6. Statistics Section
+
+Show live counters.
+
+Happy Customers
+
+Products
+
+Orders
+
+Cities Served
+
+----------------------------------------------------
+
+7. Store Location
+
+Integrate live Google Maps.
+
+Use official YUNORA location.
+
+Open in Google Maps.
+
+Get Directions.
+
+----------------------------------------------------
+
+8. Instagram Showcase
+
+Display latest posts.
+
+Open Instagram Profile.
+
+----------------------------------------------------
+
+9. Customer Trust Section
+
+Warranty
+
+Secure Payments
+
+WhatsApp Support
+
+Trusted Brand
+
+----------------------------------------------------
+
+Everything must be responsive and animated.
+
+Premium luxury furnishing design.
+
+====================================================
