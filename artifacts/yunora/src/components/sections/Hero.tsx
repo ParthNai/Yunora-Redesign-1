@@ -1,56 +1,131 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { heroImages } from "@/data/products";
 
+const slides = [
+  {
+    label: "PREMIUM COLLECTION 2025",
+    heading: "Luxury Furnishing\nCrafted For",
+    headingItalic: "Elegant Living",
+    subtext: "Elevate your home with our exclusive range of premium furnishings and décor.",
+  },
+  {
+    label: "EXCLUSIVE DESIGNS",
+    heading: "Timeless Comfort\nCrafted For",
+    headingItalic: "Every Home",
+    subtext: "Discover our curated collection of premium bedsheets, curtains and home décor.",
+  },
+  {
+    label: "NEW ARRIVALS 2025",
+    heading: "Artisan Fabrics\nMade For",
+    headingItalic: "Elegant Spaces",
+    subtext: "Explore our latest arrivals — premium textiles inspired by the finest global traditions.",
+  },
+];
+
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length);
+  const next = () => setCurrent((c) => (c + 1) % slides.length);
+
+  const slide = slides[current];
+
   return (
-    <section className="relative w-full h-[85vh] lg:h-[90vh] bg-muted overflow-hidden">
+    <section className="relative w-full h-[88vh] lg:h-[85vh] overflow-hidden bg-[#2a1f18]">
+      {/* Background image */}
       <div className="absolute inset-0">
-        <img src={heroImages[0]} alt="Hero background" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/30"></div>
-      </div>
-      
-      <div className="relative container mx-auto px-4 lg:px-8 h-full flex flex-col justify-center items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl"
-        >
-          <p className="text-white/80 text-sm md:text-base tracking-[0.3em] uppercase font-medium mb-6">Welcome to YUNORA</p>
-          
-          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-white leading-[1.1] mb-8">
-            Luxury Furnishing Crafted For <br/><span className="italic">Elegant Living</span>
-          </h1>
-          
-          <p className="text-white/90 text-lg md:text-xl font-light max-w-2xl mx-auto mb-10">
-            Transforming homes with timeless designs, premium fabrics and exceptional craftsmanship.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              href="/shop" 
-              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-sm font-medium tracking-widest transition-colors"
-              data-testid="button-hero-shop"
-            >
-              SHOP COLLECTION
-            </Link>
-            <Link 
-              href="/categories" 
-              className="w-full sm:w-auto bg-transparent hover:bg-white/10 text-white border border-white px-8 py-4 text-sm font-medium tracking-widest transition-colors"
-              data-testid="button-hero-categories"
-            >
-              EXPLORE CATEGORIES
-            </Link>
-          </div>
-        </motion.div>
+        <img
+          src={heroImages[0]}
+          alt="Luxury interior"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
       </div>
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2">
-        <div className="w-12 h-1 bg-white"></div>
-        <div className="w-12 h-1 bg-white/30"></div>
-        <div className="w-12 h-1 bg-white/30"></div>
+      {/* Left-aligned content */}
+      <div className="relative h-full flex flex-col justify-center px-6 lg:px-16 xl:px-24 max-w-2xl">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-start"
+          >
+            <p className="text-[#D4956A] text-[0.65rem] lg:text-xs tracking-[0.3em] font-medium mb-4 uppercase">
+              {slide.label}
+            </p>
+
+            <h1 className="font-serif text-white leading-[1.1] mb-4">
+              <span className="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl whitespace-pre-line">
+                {slide.heading}
+              </span>
+              <span className="block text-4xl md:text-5xl lg:text-6xl xl:text-7xl italic font-light">
+                {slide.headingItalic}
+              </span>
+            </h1>
+
+            <p className="text-white/80 text-sm lg:text-base font-light leading-relaxed mb-8 max-w-sm">
+              {slide.subtext}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/shop"
+                className="bg-primary hover:bg-primary/90 text-white px-7 py-3.5 text-xs font-semibold tracking-widest uppercase transition-colors text-center"
+                data-testid="button-hero-shop"
+              >
+                SHOP COLLECTION
+              </Link>
+              <Link
+                href="/categories"
+                className="bg-transparent border border-white text-white hover:bg-white/10 px-7 py-3.5 text-xs font-semibold tracking-widest uppercase transition-colors text-center"
+                data-testid="button-hero-categories"
+              >
+                EXPLORE CATEGORIES
+              </Link>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Prev/Next arrows */}
+      <button
+        onClick={prev}
+        className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-white/40 items-center justify-center text-white hover:bg-white/20 transition-colors"
+        data-testid="button-hero-prev"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        onClick={next}
+        className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-white/40 items-center justify-center text-white hover:bg-white/20 transition-colors"
+        data-testid="button-hero-next"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-6 left-6 lg:left-16 xl:left-24 flex gap-2">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`h-1 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-primary" : "w-4 bg-white/40"}`}
+            data-testid={`button-hero-dot-${i}`}
+          />
+        ))}
       </div>
     </section>
   );

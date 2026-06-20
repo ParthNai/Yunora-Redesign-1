@@ -4,37 +4,31 @@ import { motion } from "framer-motion";
 export default function TrustBar() {
   const features = [
     { icon: Truck, title: "Free Shipping", subtitle: "On orders above ₹999" },
-    { icon: ShieldCheck, title: "Premium Quality", subtitle: "Crafted to perfection" },
-    { icon: CreditCard, title: "Secure Payments", subtitle: "100% secure checkout" },
-    { icon: HeadphonesIcon, title: "24/7 Support", subtitle: "Dedicated assistance" },
+    { icon: ShieldCheck, title: "Premium Quality", subtitle: "Crafted with perfection" },
+    { icon: CreditCard, title: "Secure Payments", subtitle: "100% secure transactions" },
+    { icon: HeadphonesIcon, title: "24/7 Support", subtitle: "We're here to help" },
   ];
 
   return (
-    <div className="bg-card border-y border-border">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 py-8">
-          {features.map((feature, idx) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="flex items-center gap-4"
-              >
-                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary shrink-0">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="font-serif font-semibold text-foreground text-lg">{feature.title}</h4>
-                  <p className="text-xs text-muted-foreground">{feature.subtitle}</p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+    <div className="relative z-10 mx-4 lg:mx-8 -mt-8 bg-card shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-border/30">
+      <div className="grid grid-cols-4 divide-x divide-border/30">
+        {features.map((feature, idx) => {
+          const Icon = feature.icon;
+          return (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              className="flex flex-col items-center justify-center gap-1.5 py-5 px-2 lg:py-7 lg:px-6 text-center"
+            >
+              <Icon className="h-5 w-5 lg:h-6 lg:w-6 text-foreground/50 mb-1" strokeWidth={1.5} />
+              <p className="text-[0.6rem] lg:text-xs font-semibold tracking-wide text-foreground leading-tight">{feature.title}</p>
+              <p className="text-[0.55rem] lg:text-[0.65rem] text-muted-foreground hidden lg:block leading-tight">{feature.subtitle}</p>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );
