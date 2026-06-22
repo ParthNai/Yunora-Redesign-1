@@ -4,7 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Search, Heart, User, ShoppingBag, X, ChevronDown, ChevronRight,
   Menu, ArrowRight, Truck, RefreshCcw, ShieldCheck, Award, BadgeCheck,
-  MapPin, Package, Zap, Star, ChevronUp
+  MapPin, Package, Zap, Star, ChevronUp,
+  Home, Phone, Mail, MessageCircle, LogOut, Gift, Layers, LayoutGrid,
+  BookOpen, Briefcase, Settings, Info, Crown, Tag, Instagram, Facebook,
+  Youtube, Bookmark, Sparkles
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import logo from "@assets/02_1781943228013.png";
@@ -310,12 +313,54 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
   );
 }
 
-/* ─── Mobile Full-Screen Menu ─── */
-function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [expandedSection, setExpandedSection] = useState<string | null>(null);
-  const [location] = useLocation();
+/* ─── Mobile Premium Left-Slide Menu ─── */
+const MOBILE_NAV = [
+  { label: "Home",                   href: "/",               icon: Home,      sub: null },
+  { label: "Shop",                   href: "/shop",           icon: ShoppingBag, sub: SHOP_CATEGORIES.slice(0,-1).map(c => ({ label: c.label, href: c.href, emoji: c.icon })) },
+  { label: "Categories",             href: "/categories",     icon: LayoutGrid,  sub: CATEGORIES_GRID.map(c => ({ label: c.label, href: c.href, emoji: ["🛏️","🪟","🪑","☁️","🎀","🍽️","🧣","🛡️"][CATEGORIES_GRID.indexOf(c)] })) },
+  { label: "Collections",            href: "/collections",    icon: Layers,      sub: COLLECTIONS_LIST.map(c => ({ label: c.label, href: c.href, emoji: ["✨","🌟","💎","🎀","🪄","👑"][COLLECTIONS_LIST.indexOf(c)] })) },
+  { label: "New Arrivals",           href: "/new-arrivals",   icon: Sparkles,  sub: null },
+  { label: "Best Sellers",           href: "/best-sellers",   icon: Star,      sub: null },
+  { label: "Manufacturing Excellence", href: "/manufacturing", icon: Award,     sub: null },
+  { label: "About Us",               href: "/about",          icon: Info,      sub: null },
+  { label: "Contact Us",             href: "/contact",        icon: Phone,     sub: null },
+  { label: "Blogs",                  href: "/blogs",          icon: BookOpen,  sub: null },
+  { label: "Become Dealer",          href: "/become-dealer",  icon: Briefcase, sub: null },
+  { label: "Track Order",            href: "/track-order",    icon: Package,   sub: null },
+  { label: "Feedback",               href: "/profile/feedback", icon: MessageCircle, sub: null },
+];
+const ACCOUNT_LINKS = [
+  { label: "My Account",       href: "/profile",           icon: User },
+  { label: "My Wishlist",      href: "/wishlist",          icon: Heart },
+  { label: "My Orders",        href: "/profile/orders",    icon: Package },
+  { label: "Rewards",          href: "/profile/rewards",   icon: Gift },
+  { label: "Settings",         href: "/profile/settings",  icon: Settings },
+];
+const QUICK_ACTIONS = [
+  { label: "WhatsApp",  icon: MessageCircle, color: "#25D366", action: () => window.open("https://wa.me/919999999999","_blank") },
+  { label: "Call",      icon: Phone,         color: "#3A2A20", action: () => window.open("tel:+919999999999") },
+  { label: "Email",     icon: Mail,          color: "#D4AF37", action: () => window.open("mailto:support@yunora.in") },
+  { label: "Location",  icon: MapPin,        color: "#F47C4D", action: () => {} },
+];
+const SOCIAL = [
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Facebook,  href: "#", label: "Facebook" },
+  { icon: Youtube,   href: "#", label: "YouTube" },
+];
+const TRUST_ITEMS = [
+  { icon: Truck,       label: "Free Shipping" },
+  { icon: RefreshCcw,  label: "Easy Returns" },
+  { icon: ShieldCheck, label: "Secure Pay" },
+  { icon: BadgeCheck,  label: "10Yr Warranty" },
+  { icon: Award,       label: "Premium Quality" },
+];
 
-  useEffect(() => { if (!open) setExpandedSection(null); }, [open]);
+function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [expanded, setExpanded] = useState<string | null>(null);
+  const [location] = useLocation();
+  const touchStartX = useRef(0);
+
+  useEffect(() => { if (!open) setExpanded(null); }, [open]);
   useEffect(() => { onClose(); }, [location]);
   useEffect(() => {
     if (open) document.body.style.overflow = "hidden";
@@ -323,117 +368,241 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  /* Swipe left to close */
+  const onTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd   = (e: React.TouchEvent) => { if (touchStartX.current - e.changedTouches[0].clientX > 80) onClose(); };
+
   return (
     <AnimatePresence>
       {open && (
         <>
           {/* Backdrop */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[250] bg-black/50 backdrop-blur-sm"
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[250] bg-black/60"
+            style={{ backdropFilter: "blur(6px)" }}
             onClick={onClose}/>
 
-          {/* Panel */}
-          <motion.div initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "tween", duration: 0.32, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="fixed top-0 right-0 bottom-0 z-[260] w-[88vw] max-w-[380px] flex flex-col overflow-hidden"
-            style={{ background: "#FDFCFA", boxShadow: "-8px 0 40px rgba(58,42,32,0.2)" }}>
+          {/* Panel — slides from LEFT */}
+          <motion.div
+            initial={{ x: "-100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }}
+            transition={{ type: "spring", stiffness: 320, damping: 34, mass: 0.9 }}
+            className="fixed top-0 left-0 bottom-0 z-[260] flex flex-col overflow-hidden"
+            style={{ width: "90vw", maxWidth: 400, background: "#FDFCFA", boxShadow: "8px 0 60px rgba(58,42,32,0.25)" }}
+            onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 
-            {/* Header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-[#E8DDD0]" style={{ background: "#3A2A20" }}>
-              <div>
-                <p className="text-[9px] tracking-[0.3em] text-[#D4AF37] font-bold">YUNORA</p>
-                <p className="text-white text-xs font-medium">LUXURY FURNISHING</p>
+            {/* ── HEADER PANEL ── */}
+            <div className="relative shrink-0 overflow-hidden" style={{ background: "linear-gradient(135deg, #3A2A20 0%, #5c3d2a 60%, #3A2A20 100%)" }}>
+              {/* Decorative circles */}
+              <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/5 pointer-events-none"/>
+              <div className="absolute -bottom-6 -left-4 w-24 h-24 rounded-full bg-[#D4AF37]/10 pointer-events-none"/>
+
+              <div className="relative flex items-center gap-4 px-5 pt-10 pb-5">
+                {/* Logo circle */}
+                <div className="w-14 h-14 rounded-2xl border-2 border-[#D4AF37]/50 flex items-center justify-center shrink-0"
+                  style={{ background: "rgba(212,175,55,0.12)" }}>
+                  <span className="text-2xl font-black text-[#D4AF37]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Y</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[#D4AF37] font-black text-lg leading-none tracking-wider" style={{ fontFamily: "'Cormorant Garamond', serif" }}>YUNORA</p>
+                  <p className="text-white/70 text-[10px] tracking-[0.2em] mt-0.5">LUXURY FURNISHING</p>
+                  <p className="text-white/40 text-[9px] mt-0.5 italic">Crafting Elegant Living Spaces</p>
+                </div>
+                {/* Close button */}
+                <button onClick={onClose}
+                  className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-all active:scale-90"
+                  style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)" }}>
+                  <X className="h-4.5 w-4.5 text-white" style={{ width: 18, height: 18 }}/>
+                </button>
               </div>
-              <button onClick={onClose} className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
-                <X className="h-5 w-5"/>
-              </button>
+
+              {/* Promo Banner */}
+              <div className="mx-4 mb-4 rounded-xl overflow-hidden relative" style={{ background: "linear-gradient(120deg, rgba(212,175,55,0.22) 0%, rgba(244,124,77,0.18) 100%)", border: "1px solid rgba(212,175,55,0.3)" }}>
+                <div className="flex items-center justify-between px-4 py-3">
+                  <div>
+                    <p className="text-[#D4AF37] text-xs font-black tracking-wider">UP TO 40% OFF</p>
+                    <p className="text-white/80 text-[10px]">Luxury Furnishings — Limited Time</p>
+                  </div>
+                  <Link href="/shop" onClick={onClose}
+                    className="px-3 py-1.5 rounded-lg text-[10px] font-bold text-[#3A2A20] transition-all active:scale-95"
+                    style={{ background: "#D4AF37" }}>
+                    Shop Now
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            {/* Scrollable nav */}
-            <div className="flex-1 overflow-y-auto overscroll-contain">
+            {/* ── SCROLLABLE BODY ── */}
+            <div className="flex-1 overflow-y-auto overscroll-contain" style={{ WebkitOverflowScrolling: "touch" }}>
+
+              {/* ── MAIN NAV ── */}
               <div className="py-2">
-                {MOBILE_MENU_ITEMS.map(item => (
+                {MOBILE_NAV.map(item => (
                   <div key={item.label}>
                     {item.sub ? (
+                      /* Accordion item */
                       <>
                         <button
-                          onClick={() => setExpandedSection(s => s === item.label ? null : item.label)}
-                          className="w-full flex items-center justify-between px-5 py-3.5 text-sm font-semibold text-[#3A2A20] hover:bg-[#F5F0EA] transition-colors">
-                          {item.label}
-                          <motion.span animate={{ rotate: expandedSection === item.label ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                            <ChevronDown className="h-4 w-4 text-[#9E8A78]"/>
+                          onClick={() => setExpanded(s => s === item.label ? null : item.label)}
+                          className="w-full flex items-center gap-4 px-5 transition-colors active:bg-[#F0EAE0]"
+                          style={{ minHeight: 56, background: expanded === item.label ? "#F5F0EA" : "transparent" }}>
+                          <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                            style={{ background: expanded === item.label ? "#3A2A20" : "#F0EAE0" }}>
+                            <item.icon className="h-4 w-4" style={{ color: expanded === item.label ? "#D4AF37" : "#6B5744" }}/>
+                          </div>
+                          <span className="flex-1 text-left text-sm font-semibold text-[#3A2A20]">{item.label}</span>
+                          <motion.span animate={{ rotate: expanded === item.label ? 180 : 0 }} transition={{ duration: 0.22 }}>
+                            <ChevronDown className="h-4 w-4 text-[#9E8A78] shrink-0"/>
                           </motion.span>
                         </button>
+
                         <AnimatePresence>
-                          {expandedSection === item.label && (
-                            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.22 }} className="overflow-hidden bg-[#F8F5F0]">
-                              {item.sub.map(sub => (
-                                <Link key={sub.label} href={sub.href} onClick={onClose}
-                                  className="flex items-center gap-3 px-8 py-2.5 text-sm text-[#6B5744] hover:text-[#3A2A20] hover:bg-[#F0EAE0] transition-colors">
-                                  <span className="w-1 h-1 rounded-full bg-[#D4AF37] shrink-0"/>
-                                  {sub.label}
+                          {expanded === item.label && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
+                              className="overflow-hidden"
+                              style={{ background: "#F8F5F0" }}>
+                              <div className="py-1">
+                                {item.sub.map((sub, si) => (
+                                  <Link key={sub.label} href={sub.href} onClick={onClose}
+                                    className="flex items-center gap-3.5 px-6 py-2.5 transition-colors active:bg-[#EDE8E0]"
+                                    style={{ minHeight: 44 }}>
+                                    <span className="text-base w-6 text-center">{sub.emoji}</span>
+                                    <span className="text-sm text-[#3A2A20] font-medium">{sub.label}</span>
+                                  </Link>
+                                ))}
+                                <Link href={item.href} onClick={onClose}
+                                  className="flex items-center gap-2 px-6 py-3 border-t border-[#E8DDD0] mt-1">
+                                  <span className="text-xs font-bold text-[#D4AF37]">View All {item.label}</span>
+                                  <ArrowRight className="h-3 w-3 text-[#D4AF37]"/>
                                 </Link>
-                              ))}
-                              <Link href={item.href} onClick={onClose}
-                                className="flex items-center gap-2 px-8 py-3 text-xs font-bold text-[#D4AF37] hover:text-[#b8932a] transition-colors">
-                                View All {item.label} <ArrowRight className="h-3 w-3"/>
-                              </Link>
+                              </div>
                             </motion.div>
                           )}
                         </AnimatePresence>
                       </>
                     ) : (
+                      /* Plain nav link */
                       <Link href={item.href} onClick={onClose}
-                        className="flex items-center justify-between px-5 py-3.5 text-sm font-semibold text-[#3A2A20] hover:bg-[#F5F0EA] transition-colors">
-                        {item.label}
-                        <ChevronRight className="h-4 w-4 text-[#C4B09A]"/>
+                        className="flex items-center gap-4 px-5 transition-colors active:bg-[#F0EAE0]"
+                        style={{ minHeight: 56 }}>
+                        <div className="w-9 h-9 rounded-xl bg-[#F0EAE0] flex items-center justify-center shrink-0">
+                          <item.icon className="h-4 w-4 text-[#6B5744]"/>
+                        </div>
+                        <span className="flex-1 text-sm font-semibold text-[#3A2A20]">{item.label}</span>
+                        <ChevronRight className="h-4 w-4 text-[#C4B09A] shrink-0"/>
                       </Link>
                     )}
                   </div>
                 ))}
               </div>
 
-              {/* Divider */}
-              <div className="h-px bg-[#E8DDD0] mx-5 my-2"/>
+              <div className="h-px bg-[#E8DDD0] mx-5 my-3"/>
 
-              {/* Account links */}
-              <div className="py-2">
-                {[
-                  { label: "My Account",   href: "/profile",         icon: User },
-                  { label: "My Wishlist",  href: "/wishlist",        icon: Heart },
-                  { label: "My Orders",    href: "/profile/orders",  icon: Package },
-                  { label: "Track Order",  href: "/track-order",     icon: MapPin },
-                ].map(item => (
-                  <Link key={item.label} href={item.href} onClick={onClose}
-                    className="flex items-center gap-3 px-5 py-3 text-sm text-[#6B5744] hover:bg-[#F5F0EA] hover:text-[#3A2A20] transition-colors">
-                    <item.icon className="h-4 w-4 text-[#D4AF37] shrink-0"/>
-                    {item.label}
+              {/* ── YUNORA ELITE CARD ── */}
+              <div className="mx-4 mb-4 rounded-2xl overflow-hidden relative"
+                style={{ background: "linear-gradient(135deg, #FFF8EC 0%, #FFF0D9 100%)", border: "1px solid #E8C97E" }}>
+                <div className="flex items-center gap-3 p-4">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: "linear-gradient(135deg, #D4AF37, #b8932a)" }}>
+                    <Crown className="h-5 w-5 text-white"/>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-bold text-[#3A2A20] text-sm">YUNORA Elite</p>
+                    <p className="text-[#6B5744] text-[11px] leading-snug mt-0.5">Join our loyalty program &amp; unlock exclusive benefits.</p>
+                  </div>
+                  <Link href="/profile" onClick={onClose}
+                    className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all active:scale-90"
+                    style={{ background: "#D4AF37" }}>
+                    <ArrowRight className="h-4 w-4 text-white"/>
                   </Link>
-                ))}
+                </div>
               </div>
 
-              {/* Trust bar */}
-              <div className="mx-4 my-3 rounded-2xl overflow-hidden border border-[#E8DDD0]" style={{ background: "#F5F0EA" }}>
-                <div className="px-4 py-3">
-                  <p className="text-[9px] tracking-[0.24em] font-bold text-[#D4AF37] mb-3">YUNORA PROMISE</p>
-                  {MOBILE_TRUST.map(t => (
-                    <div key={t.text} className="flex items-center gap-2.5 py-1.5">
-                      <t.icon className="h-3.5 w-3.5 text-[#D4AF37] shrink-0"/>
-                      <span className="text-xs text-[#6B5744]">{t.text}</span>
+              {/* ── MY ACCOUNT ── */}
+              <div className="px-5 mb-1">
+                <p className="text-[9px] tracking-[0.28em] font-bold text-[#9E8A78] mb-2">MY ACCOUNT</p>
+              </div>
+              {ACCOUNT_LINKS.map(item => (
+                <Link key={item.label} href={item.href} onClick={onClose}
+                  className="flex items-center gap-4 px-5 transition-colors active:bg-[#F0EAE0]"
+                  style={{ minHeight: 50 }}>
+                  <div className="w-8 h-8 rounded-lg bg-[#F0EAE0] flex items-center justify-center shrink-0">
+                    <item.icon className="h-3.5 w-3.5 text-[#6B5744]"/>
+                  </div>
+                  <span className="flex-1 text-sm text-[#3A2A20] font-medium">{item.label}</span>
+                  <ChevronRight className="h-3.5 w-3.5 text-[#C4B09A] shrink-0"/>
+                </Link>
+              ))}
+              <button
+                onClick={() => onClose()}
+                className="flex items-center gap-4 px-5 w-full transition-colors active:bg-red-50"
+                style={{ minHeight: 50 }}>
+                <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center shrink-0">
+                  <LogOut className="h-3.5 w-3.5 text-red-500"/>
+                </div>
+                <span className="flex-1 text-left text-sm text-red-500 font-medium">Logout</span>
+              </button>
+
+              <div className="h-px bg-[#E8DDD0] mx-5 my-3"/>
+
+              {/* ── QUICK ACTIONS ── */}
+              <div className="px-5 mb-2">
+                <p className="text-[9px] tracking-[0.28em] font-bold text-[#9E8A78] mb-3">QUICK ACTIONS</p>
+                <div className="grid grid-cols-4 gap-2">
+                  {QUICK_ACTIONS.map(a => (
+                    <button key={a.label} onClick={() => { a.action(); onClose(); }}
+                      className="flex flex-col items-center gap-1.5 p-3 rounded-xl transition-all active:scale-95"
+                      style={{ background: "#F5F0EA" }}>
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+                        style={{ background: `${a.color}18` }}>
+                        <a.icon className="h-4 w-4" style={{ color: a.color }}/>
+                      </div>
+                      <span className="text-[9px] font-semibold text-[#6B5744]">{a.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="h-px bg-[#E8DDD0] mx-5 my-3"/>
+
+              {/* ── TRUST STRIP ── */}
+              <div className="mx-4 mb-4 rounded-2xl p-3" style={{ background: "#F5F0EA", border: "1px solid #E8DDD0" }}>
+                <p className="text-[8px] tracking-[0.3em] font-bold text-[#D4AF37] mb-2.5 text-center">YUNORA PROMISE</p>
+                <div className="grid grid-cols-5 gap-1">
+                  {TRUST_ITEMS.map(t => (
+                    <div key={t.label} className="flex flex-col items-center gap-1 text-center">
+                      <div className="w-7 h-7 rounded-lg bg-white flex items-center justify-center">
+                        <t.icon className="h-3.5 w-3.5 text-[#D4AF37]"/>
+                      </div>
+                      <span className="text-[8px] text-[#6B5744] font-medium leading-tight">{t.label}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* CTA */}
-              <div className="px-4 pb-6 pt-2">
-                <Link href="/login" onClick={onClose}
-                  className="flex items-center justify-center gap-2 w-full h-11 bg-[#3A2A20] text-white text-sm font-bold rounded-xl hover:bg-[#4a3830] transition-colors mb-2">
-                  <User className="h-4 w-4"/> Login / Register
-                </Link>
-                <Link href="/shop" onClick={onClose}
-                  className="flex items-center justify-center gap-2 w-full h-11 border-2 border-[#3A2A20] text-[#3A2A20] text-sm font-bold rounded-xl hover:bg-[#F5F0EA] transition-colors">
-                  <ShoppingBag className="h-4 w-4"/> Shop Now
-                </Link>
+              {/* ── SOCIAL + LEGAL FOOTER ── */}
+              <div className="px-5 pb-8">
+                <div className="flex items-center gap-3 mb-3">
+                  {SOCIAL.map(s => (
+                    <a key={s.label} href={s.href} target="_blank" rel="noreferrer"
+                      className="w-9 h-9 rounded-xl bg-[#F0EAE0] flex items-center justify-center transition-all active:scale-90 hover:bg-[#E8DDD0]">
+                      <s.icon className="h-4 w-4 text-[#6B5744]"/>
+                    </a>
+                  ))}
+                  <div className="flex-1"/>
+                  <span className="text-[9px] text-[#C4B09A]">Follow us</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  {["Terms","Privacy","Sitemap"].map(l => (
+                    <Link key={l} href="#" onClick={onClose} className="text-[9px] text-[#9E8A78] hover:text-[#3A2A20] transition-colors">{l}</Link>
+                  ))}
+                  <span className="text-[9px] text-[#C4B09A] ml-auto">© 2025 YUNORA</span>
+                </div>
               </div>
             </div>
           </motion.div>
