@@ -1,0 +1,466 @@
+Create a Premium Product Customization System for YUNORA Furnishing.
+
+This feature should be available on every customizable product page.
+
+Examples:
+
+Curtains
+Bedsheets
+Comforters
+Sofa Fabrics
+Cushions
+Dining Covers
+Custom Home Decor Products
+
+====================================================
+
+GOAL
+
+Allow customers to create products according to their exact requirements.
+
+Provide:
+
+1. Self Customization Form
+
+2. WhatsApp Assisted Customization
+
+3. Custom Quote Request
+
+4. Design Consultation
+
+====================================================
+
+PRODUCT PAGE SECTION
+
+Add a new section below Add To Cart and Buy Now.
+
+Section Name:
+
+Customize This Product
+
+Subtitle:
+
+Need a perfect fit?
+
+Create a custom-made version designed exactly for your space.
+
+====================================================
+
+DESKTOP DESIGN
+
+Luxury Glassmorphism Card
+
+Soft Ivory Background
+
+Premium Border
+
+Luxury Shadows
+
+Large Illustration
+
+Luxury Interior Photography
+
+Benefits List:
+
+✓ Perfect Size Fit
+
+✓ Custom Colors
+
+✓ Premium Fabric Selection
+
+✓ Design Personalization
+
+✓ Expert Consultation
+
+✓ Made To Order
+
+====================================================
+
+BUTTONS
+
+Primary Button
+
+Customize Now
+
+Secondary Button
+
+Chat On WhatsApp
+
+====================================================
+
+CUSTOMIZATION MODAL
+
+Open fullscreen modal.
+
+Desktop:
+
+70% screen width
+
+Mobile:
+
+100% fullscreen
+
+====================================================
+
+STEP 1
+
+SELECT PRODUCT TYPE
+
+Curtains
+
+Bedsheets
+
+Comforters
+
+Sofa Fabric
+
+Cushions
+
+Custom Product
+
+====================================================
+
+STEP 2
+
+ENTER MEASUREMENTS
+
+Width
+
+Height
+
+Length
+
+Depth
+
+Quantity
+
+Measurement Unit
+
+cm
+
+inch
+
+feet
+
+Add visual measuring guide.
+
+Show illustrations.
+
+====================================================
+
+STEP 3
+
+SELECT FABRIC
+
+Cotton
+
+Egyptian Cotton
+
+Linen
+
+Velvet
+
+Silk Blend
+
+Jacquard
+
+Blackout Fabric
+
+Sheer Fabric
+
+Premium Fabric
+
+Show fabric swatches.
+
+Show texture previews.
+
+====================================================
+
+STEP 4
+
+SELECT COLORS
+
+Luxury color palette
+
+Ivory
+
+Beige
+
+Sand
+
+Taupe
+
+Olive
+
+Terracotta
+
+Grey
+
+White
+
+Custom Color
+
+Visual color circles.
+
+====================================================
+
+STEP 5
+
+SELECT DESIGN
+
+Modern
+
+Minimal
+
+Classic
+
+Luxury
+
+Royal
+
+Custom Design
+
+Upload inspiration image.
+
+====================================================
+
+STEP 6
+
+SPECIAL REQUIREMENTS
+
+Large Textarea
+
+Examples:
+
+Need matching cushions
+
+Need blackout lining
+
+Need embroidery
+
+Need logo printing
+
+Need premium packaging
+
+====================================================
+
+STEP 7
+
+UPLOAD FILES
+
+Room Photo
+
+Reference Image
+
+Design Sketch
+
+Dimensions Sheet
+
+Drag and Drop Upload
+
+====================================================
+
+STEP 8
+
+CUSTOMER DETAILS
+
+Name
+
+Phone
+
+WhatsApp Number
+
+Email
+
+City
+
+State
+
+Pincode
+
+====================================================
+
+STEP 9
+
+LIVE ESTIMATE
+
+Estimated Fabric Requirement
+
+Estimated Production Time
+
+Estimated Price Range
+
+Shipping Estimate
+
+====================================================
+
+STEP 10
+
+SUBMIT
+
+Request Custom Quote
+
+====================================================
+
+WHATSAPP CUSTOMIZATION
+
+Add WhatsApp Customization Option.
+
+Button:
+
+Customize Through WhatsApp
+
+When clicked:
+
+Automatically open WhatsApp.
+
+Pre-fill message:
+
+Hello YUNORA Team,
+
+I want a customized product.
+
+Product:
+[Product Name]
+
+Size:
+[Entered Size]
+
+Fabric:
+[Selected Fabric]
+
+Color:
+[Selected Color]
+
+Requirements:
+[Customer Notes]
+
+Please help me with a custom quote.
+
+====================================================
+
+ADMIN PANEL REQUIREMENTS
+
+Store all customization requests.
+
+Admin can view:
+
+Customer Details
+
+Measurements
+
+Fabric Selection
+
+Uploaded Images
+
+Notes
+
+Status
+
+Pending
+
+Quoted
+
+In Production
+
+Completed
+
+====================================================
+
+CUSTOMER DASHBOARD
+
+Add:
+
+My Custom Orders
+
+Track Status
+
+Download Quote
+
+Approve Design
+
+Approve Production
+
+Chat With Expert
+
+====================================================
+
+PRODUCT PAGE EXTRAS
+
+Below customization section add:
+
+Why Customize With YUNORA
+
+Perfect Fit Guarantee
+
+Premium Fabric Selection
+
+Expert Design Team
+
+Handcrafted Production
+
+Luxury Finish
+
+====================================================
+
+MOBILE EXPERIENCE
+
+Full-screen premium flow.
+
+Large buttons.
+
+Progress indicator.
+
+Sticky bottom CTA.
+
+WhatsApp always visible.
+
+====================================================
+
+ANIMATIONS
+
+Smooth transitions.
+
+Luxury micro interactions.
+
+Step-to-step progress animation.
+
+====================================================
+
+FUNCTIONALITY
+
+Everything must be fully working.
+
+Store data in database.
+
+Send admin email notification.
+
+Send WhatsApp notification.
+
+Generate quotation request.
+
+Allow image uploads.
+
+Track request status.
+
+No dummy forms.
+
+====================================================
+
+Design Quality:
+
+Apple Level UX
+
+MyTrident Inspired
+
+Luxury Furnishing Brand Experience
+
+Premium White Space
+
+Glassmorphism
+
+Behance Award Winning UI
+
+Fully Responsive
+
+Desktop + Mobile Perfect
