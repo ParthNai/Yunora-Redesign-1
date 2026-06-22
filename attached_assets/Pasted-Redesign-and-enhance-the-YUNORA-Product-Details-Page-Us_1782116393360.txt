@@ -1,0 +1,395 @@
+Redesign and enhance the YUNORA Product Details Page.
+
+Use the attached reference image as the exact design inspiration.
+
+The final design must be fully functional, responsive and premium.
+
+Inspired by:
+
+• Apple
+• Zara Home
+• MyTrident
+• Pottery Barn
+• Restoration Hardware
+
+====================================================
+
+SECTION 1
+
+CUSTOMIZE THIS PRODUCT
+
+Position:
+
+Right side below product information
+
+Desktop:
+
+Premium glass card
+
+Mobile:
+
+Full width card
+
+Heading:
+
+Customize This Product
+
+Description:
+
+Create a perfect made-to-order version according to your size, fabric and design requirements.
+
+Buttons:
+
+Customize Now
+
+Chat On WhatsApp
+
+====================================================
+
+CUSTOMIZATION FLOW
+
+Click Customize Now
+
+Open Premium Fullscreen Modal
+
+Multi Step Form
+
+Step 1
+
+Product Type
+
+Step 2
+
+Dimensions
+
+Width
+
+Height
+
+Length
+
+Step 3
+
+Fabric
+
+Step 4
+
+Color
+
+Step 5
+
+Design Preference
+
+Step 6
+
+Upload Room Photo
+
+Step 7
+
+Special Notes
+
+Step 8
+
+Contact Information
+
+Step 9
+
+Review Request
+
+Step 10
+
+Submit
+
+====================================================
+
+WHATSAPP CUSTOMIZATION
+
+Button:
+
+Chat On WhatsApp
+
+Automatically open WhatsApp.
+
+Prefill:
+
+Hello YUNORA Team,
+
+I want to customize this product.
+
+Product:
+[Product Name]
+
+Size:
+[Selected Size]
+
+Fabric:
+[Selected Fabric]
+
+Color:
+[Selected Color]
+
+Please assist me.
+
+====================================================
+
+SECTION 2
+
+DELIVERY CHECKER
+
+Card Title:
+
+Check Delivery
+
+Input:
+
+Enter Pincode
+
+Button:
+
+Check
+
+Show:
+
+Delivery Date
+
+Shipping Status
+
+COD Availability
+
+Express Delivery Availability
+
+====================================================
+
+SECTION 3
+
+TRUSTED MARKETPLACES
+
+Position:
+
+Below Product Hero Section
+
+Heading:
+
+Available On Trusted Marketplaces
+
+Description:
+
+Shop from YUNORA or your preferred marketplace.
+
+Cards:
+
+Amazon
+
+Flipkart
+
+Myntra
+
+Ajio
+
+Each Card Contains:
+
+Official Logo
+
+Marketplace Name
+
+Verified Badge
+
+View Product Button
+
+External Link Icon
+
+====================================================
+
+DYNAMIC DATABASE FIELDS
+
+amazon_url
+
+flipkart_url
+
+myntra_url
+
+ajio_url
+
+Show card only when URL exists.
+
+Hide unavailable marketplaces.
+
+====================================================
+
+SECTION 4
+
+WHY SHOP ON YUNORA
+
+Heading:
+
+Why Shop On YUNORA?
+
+Cards:
+
+Exclusive Website Offers
+
+Customization Available
+
+Priority Support
+
+Reward Points
+
+Extended Warranty
+
+Better Pricing
+
+Premium Packaging
+
+====================================================
+
+SECTION 5
+
+VIEW IN YOUR ROOM
+
+Button on product image:
+
+View In Your Room
+
+Open Room Visualizer
+
+User uploads room image
+
+Preview product placement
+
+Desktop and Mobile supported
+
+====================================================
+
+SECTION 6
+
+FABRIC SAMPLE ORDERING
+
+Trust Strip
+
+Order Fabric Sample
+
+Get fabric swatches before purchasing.
+
+Button:
+
+Order Sample
+
+====================================================
+
+SECTION 7
+
+PRODUCT INFORMATION TABS
+
+Product Details
+
+Specifications
+
+Care Instructions
+
+Reviews
+
+Q&A
+
+Room Visualizer
+
+Size Guide
+
+Compare
+
+Warranty
+
+All tabs fully functional.
+
+====================================================
+
+SECTION 8
+
+MOBILE EXPERIENCE
+
+Sticky Bottom Bar
+
+Add To Cart
+
+Buy Now
+
+Always Visible
+
+Customize Now
+
+Quick WhatsApp
+
+Swipeable Product Gallery
+
+Sticky Trust Section
+
+Responsive Marketplace Cards
+
+====================================================
+
+ANIMATIONS
+
+Image Hover Zoom
+
+Card Hover Lift
+
+Fade In Sections
+
+Smooth Scrolling
+
+Luxury Micro Interactions
+
+====================================================
+
+DESIGN STYLE
+
+Soft Ivory Background
+
+Warm Beige Accents
+
+Terracotta Highlights
+
+Luxury White Space
+
+Glassmorphism
+
+Premium Shadows
+
+Playfair Display Headings
+
+Inter Body Text
+
+Apple Level UX
+
+Behance Award Winning Design
+
+====================================================
+
+FUNCTIONALITY
+
+Everything must work.
+
+No dummy buttons.
+
+No placeholder links.
+
+Marketplace buttons open exact URLs.
+
+WhatsApp works.
+
+Customization form saves data.
+
+Admin receives requests.
+
+Customer receives confirmation.
+
+Responsive on:
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+Create a premium furnishing ecommerce experience that feels more luxurious than MyTrident.

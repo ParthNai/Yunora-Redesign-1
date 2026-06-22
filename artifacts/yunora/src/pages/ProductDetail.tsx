@@ -13,6 +13,7 @@ import Footer from "@/components/layout/Footer";
 import MobileNav from "@/components/layout/MobileNav";
 import ProductCard from "@/components/ui/ProductCard";
 import CustomizeSection from "@/components/ui/CustomizeSection";
+import MarketplaceSection from "@/components/ui/MarketplaceSection";
 import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 
@@ -505,6 +506,15 @@ export default function ProductDetail() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* ═══ MARKETPLACE SECTION ═══ */}
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 pb-4 lg:pb-6">
+          <MarketplaceSection
+            productName={product.name}
+            price={product.price}
+            marketplaces={product.marketplaces}
+          />
         </div>
 
         {/* ═══ TRUST STRIP ═══ */}
