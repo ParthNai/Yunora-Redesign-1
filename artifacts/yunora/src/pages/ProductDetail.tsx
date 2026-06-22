@@ -12,6 +12,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileNav from "@/components/layout/MobileNav";
 import ProductCard from "@/components/ui/ProductCard";
+import CustomizeSection from "@/components/ui/CustomizeSection";
 import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 
@@ -521,6 +522,11 @@ export default function ProductDetail() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* ═══ CUSTOMIZE SECTION ═══ */}
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-10 lg:py-14">
+          <CustomizeSection productName={product.name} productType={product.category?.toLowerCase().replace(/\s+/g, "-")} />
         </div>
 
         {/* ═══ TABS ═══ */}

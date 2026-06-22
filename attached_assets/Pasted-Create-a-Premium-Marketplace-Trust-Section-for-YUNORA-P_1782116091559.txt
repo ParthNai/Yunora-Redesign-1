@@ -1,0 +1,293 @@
+Create a Premium Marketplace Trust Section for YUNORA Product Pages.
+
+IMPORTANT:
+
+This section should appear below:
+
+Add To Cart
+Buy Now
+Wishlist
+
+and above Product Description.
+
+Purpose:
+
+Increase customer trust.
+
+Show customers that YUNORA products are also available on trusted marketplaces.
+
+====================================================
+
+SECTION TITLE
+
+Available On Trusted Marketplaces
+
+Subtitle:
+
+Shop directly from YUNORA or purchase from your preferred trusted marketplace.
+
+====================================================
+
+DESKTOP LAYOUT
+
+Create a luxury horizontal card section.
+
+Soft Ivory Background
+
+Glassmorphism Effect
+
+Premium Border
+
+Luxury Shadow
+
+Rounded Corners
+
+Large White Space
+
+====================================================
+
+LEFT SIDE
+
+Trust Message
+
+Heading:
+
+Trusted Across Leading Shopping Platforms
+
+Description:
+
+YUNORA products are available on trusted online marketplaces. Choose the platform you prefer and enjoy the same authentic YUNORA quality.
+
+Trust Badges:
+
+100% Genuine Products
+
+Official Marketplace Listings
+
+Secure Shopping
+
+Verified Seller
+
+====================================================
+
+RIGHT SIDE
+
+Marketplace Cards
+
+Amazon
+
+Flipkart
+
+Myntra
+
+Ajio
+
+(optional)
+
+Each card should contain:
+
+Official Marketplace Logo
+
+Marketplace Name
+
+Verified Listing Badge
+
+View Product Button
+
+Open In New Tab Icon
+
+====================================================
+
+BUTTON BEHAVIOR
+
+Amazon Button
+
+Open exact product Amazon URL
+
+Flipkart Button
+
+Open exact product Flipkart URL
+
+Myntra Button
+
+Open exact product Myntra URL
+
+Open in new tab.
+
+====================================================
+
+DYNAMIC FUNCTIONALITY
+
+Each product should have marketplace fields:
+
+amazon_url
+
+flipkart_url
+
+myntra_url
+
+ajio_url
+
+If URL exists:
+
+Show card
+
+If URL is empty:
+
+Hide marketplace card
+
+Do not show broken links.
+
+====================================================
+
+TRUST INDICATOR
+
+Display:
+
+Official YUNORA Product
+
+Verified Marketplace Listing
+
+Authenticity Guaranteed
+
+====================================================
+
+PRODUCT COMPARISON CARD
+
+Show:
+
+YUNORA Website Benefits
+
+Lowest Price
+
+Exclusive Offers
+
+Customization Available
+
+Faster Support
+
+Reward Points
+
+Extended Warranty
+
+Display comparison:
+
+Buy From YUNORA
+
+vs
+
+Other Platforms
+
+====================================================
+
+MOBILE DESIGN
+
+Responsive stacked cards.
+
+Horizontal scroll slider.
+
+Large marketplace logos.
+
+Large touch buttons.
+
+Easy tap targets.
+
+Premium spacing.
+
+====================================================
+
+ANIMATIONS
+
+Hover Animation
+
+Card Lift Effect
+
+Soft Glow
+
+Button Hover
+
+Logo Animation
+
+Fade In On Scroll
+
+====================================================
+
+ADMIN PANEL REQUIREMENTS
+
+Add fields:
+
+Amazon Product URL
+
+Flipkart Product URL
+
+Myntra Product URL
+
+Ajio Product URL
+
+Marketplace Status
+
+Enable / Disable
+
+Show only enabled marketplaces.
+
+====================================================
+
+SEO
+
+Add structured data.
+
+Marketplace links should be crawlable.
+
+Use rel='noopener noreferrer'
+
+Open in new tab.
+
+====================================================
+
+UI STYLE
+
+Luxury Furnishing Brand
+
+Apple Level Design
+
+MyTrident Inspired
+
+Zara Home Inspired
+
+Soft Ivory Theme
+
+Warm Beige Accents
+
+Terracotta Highlights
+
+Playfair Display Headings
+
+Inter Body Text
+
+Premium Glassmorphism
+
+Luxury White Space
+
+Behance Award Winning UI
+
+====================================================
+
+FUNCTIONALITY
+
+Everything must be fully working.
+
+No dummy links.
+
+No placeholder buttons.
+
+All marketplace buttons should dynamically open the correct product page from database URLs.
+
+Fully responsive on:
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
