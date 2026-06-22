@@ -1,141 +1,102 @@
-import { categories, products } from "@/data/products";
+import { categories } from "@/data/products";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import ProductCard from "@/components/ui/ProductCard";
+
+const ROOMS = [
+  { name: "Bedroom",     href: "/category/bedroom" },
+  { name: "Living Room", href: "/category/living-room" },
+  { name: "Dining Room", href: "/category/dining-room" },
+  { name: "Kids Room",   href: "/category/kids-room" },
+  { name: "Guest Room",  href: "/category/guest-room" },
+  { name: "Outdoor",     href: "/category/outdoor" },
+  { name: "Office",      href: "/category/office" },
+  { name: "Hotel",       href: "/category/hotel" },
+];
 
 export default function CategorySection() {
-  const featuredProducts = products.slice(0, 4);
-
   return (
-    <section className="pt-16 pb-8 lg:py-20 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section className="py-14 lg:py-20 bg-white">
+      <div className="max-w-[1320px] mx-auto px-4 lg:px-8">
 
-        {/* ─── Mobile: horizontal scroll ─── */}
-        <div className="lg:hidden">
-          <div className="flex justify-between items-center mb-5">
-            <h2 className="font-serif text-2xl text-foreground">Shop by Category</h2>
-            <Link href="/categories" className="text-xs font-medium text-primary uppercase tracking-widest border-b border-primary pb-0.5">
-              View All
+        {/* ── SHOP BY ROOM ── */}
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <p className="text-[10px] tracking-[0.28em] font-bold text-[#D4AF37] mb-1">BROWSE</p>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#3A2A20]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              Shop by Room
+            </h2>
+          </div>
+          <Link href="/categories"
+            className="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-[#D4AF37] hover:text-[#b8932a] transition-colors">
+            View All Rooms <ArrowRight className="h-3.5 w-3.5"/>
+          </Link>
+        </div>
+
+        {/* Room photo card strip */}
+        <div className="flex gap-3 lg:gap-4 overflow-x-auto pb-2 -mx-4 px-4 lg:mx-0 lg:px-0 scrollbar-none snap-x snap-mandatory lg:grid lg:grid-cols-8">
+          {categories.map((cat, i) => (
+            <motion.div key={cat.id}
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }}
+              className="shrink-0 w-36 lg:w-auto snap-start">
+              <Link href={`/category/${cat.slug}`}>
+                <div className="group cursor-pointer rounded-xl overflow-hidden border border-[#E8DDD0] hover:border-[#D4AF37] hover:shadow-lg transition-all duration-300">
+                  <div className="aspect-square overflow-hidden bg-[#F5F0EA]">
+                    <img src={cat.image} alt={cat.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                  </div>
+                  <div className="px-2.5 py-2 bg-white">
+                    <p className="text-[11px] font-semibold text-[#3A2A20] leading-tight truncate">{cat.name}</p>
+                    <p className="text-[9px] text-[#9E8A78] mt-0.5">{cat.count}</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile view all */}
+        <div className="sm:hidden mt-4 text-center">
+          <Link href="/categories" className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D4AF37]">
+            View All Rooms <ArrowRight className="h-3.5 w-3.5"/>
+          </Link>
+        </div>
+
+        {/* ── SHOP BY CATEGORY — desktop list ── */}
+        <div className="hidden lg:block mt-16">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <p className="text-[10px] tracking-[0.28em] font-bold text-[#D4AF37] mb-1">CATEGORIES</p>
+              <h2 className="text-2xl lg:text-3xl font-bold text-[#3A2A20]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                Shop by Category
+              </h2>
+            </div>
+            <Link href="/categories"
+              className="flex items-center gap-1.5 text-xs font-semibold text-[#D4AF37] hover:text-[#b8932a] transition-colors">
+              View All Categories <ArrowRight className="h-3.5 w-3.5"/>
             </Link>
           </div>
 
-          <div className="flex gap-3 overflow-x-auto pb-3 -mx-4 px-4 scrollbar-none snap-x snap-mandatory">
+          {/* 4-column full-width photo cards */}
+          <div className="grid grid-cols-4 xl:grid-cols-8 gap-3">
             {categories.map((cat, i) => (
-              <motion.div
-                key={cat.id}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="shrink-0 w-36 snap-start"
-              >
+              <motion.div key={cat.id}
+                initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 }}>
                 <Link href={`/category/${cat.slug}`}>
-                  <div className="relative overflow-hidden group cursor-pointer">
-                    <div className="aspect-[3/4] bg-muted/30 overflow-hidden">
-                      <motion.img
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.5 }}
-                        src={cat.image}
-                        alt={cat.name}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+                  <div className="group cursor-pointer rounded-xl overflow-hidden border border-[#E8DDD0] hover:border-[#D4AF37] hover:shadow-md transition-all duration-300">
+                    <div className="aspect-[3/4] overflow-hidden bg-[#F5F0EA]">
+                      <img src={cat.image} alt={cat.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-3 flex items-end justify-between">
-                      <div>
-                        <p className="text-white text-[0.6rem] tracking-widest font-medium uppercase">{cat.name}</p>
-                        <p className="text-white/70 text-[0.5rem]">{cat.count}</p>
-                      </div>
-                      <div className="w-6 h-6 rounded-full border border-white/50 flex items-center justify-center">
-                        <ArrowRight className="h-3 w-3 text-white" />
-                      </div>
+                    <div className="p-2 bg-white">
+                      <p className="text-[11px] font-bold text-[#3A2A20] leading-tight truncate">{cat.name}</p>
+                      <p className="text-[9px] text-[#9E8A78]">{cat.count}</p>
                     </div>
                   </div>
                 </Link>
               </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* ─── Desktop: two-column (categories left, featured right) ─── */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-10 xl:gap-16">
-
-          {/* Left column: Category grid */}
-          <div>
-            <div className="flex justify-between items-center mb-7">
-              <h2 className="font-serif text-3xl xl:text-4xl text-foreground">Shop by Category</h2>
-              <Link href="/categories" className="text-xs font-medium text-primary uppercase tracking-widest border-b border-primary pb-0.5 hover:text-foreground transition-colors">
-                View All →
-              </Link>
-            </div>
-
-            {/* 5-card horizontal row */}
-            <div className="grid grid-cols-5 gap-3">
-              {categories.map((cat, i) => (
-                <motion.div
-                  key={cat.id}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: i * 0.07 }}
-                >
-                  <Link href={`/category/${cat.slug}`}>
-                    <div className="group relative overflow-hidden cursor-pointer">
-                      <div className="aspect-[2/3] bg-muted/30 overflow-hidden">
-                        <motion.img
-                          whileHover={{ scale: 1.06 }}
-                          transition={{ duration: 0.5 }}
-                          src={cat.image}
-                          alt={cat.name}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-2.5">
-                        <p className="text-white text-[0.58rem] tracking-[0.12em] font-medium uppercase leading-tight">{cat.name}</p>
-                        <p className="text-white/60 text-[0.5rem] mt-0.5">{cat.count}</p>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right column: Featured Products */}
-          <div>
-            <div className="flex justify-between items-center mb-7">
-              <h2 className="font-serif text-3xl xl:text-4xl text-foreground">Featured Products</h2>
-              <div className="flex gap-2">
-                <button className="w-7 h-7 border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors" data-testid="button-featured-prev">
-                  <ArrowRight className="h-3.5 w-3.5 rotate-180" />
-                </button>
-                <button className="w-7 h-7 border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors" data-testid="button-featured-next">
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 xl:gap-6">
-              {featuredProducts.map((product, idx) => (
-                <ProductCard key={product.id} product={product} index={idx} />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* ─── Mobile: Featured Products ─── */}
-        <div className="lg:hidden mt-10">
-          <div className="flex justify-between items-center mb-5">
-            <h2 className="font-serif text-2xl text-foreground">Featured Products</h2>
-            <Link href="/shop" className="text-xs font-medium text-primary uppercase tracking-widest border-b border-primary pb-0.5">
-              View All
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            {products.slice(0, 4).map((product, idx) => (
-              <ProductCard key={product.id} product={product} index={idx} />
             ))}
           </div>
         </div>
