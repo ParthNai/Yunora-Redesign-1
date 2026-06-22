@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { api, toProductCard } from "@/lib/api";
-import { products as staticProducts } from "@/data/products";
 import ProductCard from "@/components/ui/ProductCard";
 import catBedsheets from "@/assets/cat-bedsheets.png";
 
@@ -12,9 +11,7 @@ export default function FeaturedProducts() {
     retry: 1,
   });
 
-  const displayProducts = data && data.items.length > 0
-    ? data.items.slice(0, 4).map((p) => toProductCard(p, catBedsheets))
-    : staticProducts.slice(0, 4);
+  const displayProducts = data?.items?.filter(p => p.name && p.price).slice(0, 4).map((p) => toProductCard(p, catBedsheets)) ?? [];
 
   return (
     <section className="py-20 bg-secondary/30">
@@ -34,6 +31,8 @@ export default function FeaturedProducts() {
               </div>
             ))}
           </div>
+        ) : displayProducts.length === 0 ? (
+          <p className="text-center text-muted-foreground py-12">No products yet. Add them from the admin panel.</p>
         ) : (
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
             {displayProducts.map((product, idx) => (

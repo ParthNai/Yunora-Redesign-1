@@ -5,7 +5,7 @@ import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileNav from "@/components/layout/MobileNav";
-import { products as staticProducts, categories as staticCategories, type Product } from "@/data/products";
+import { type Product } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import hero1 from "@/assets/hero-1.png";
 import catBedsheets from "@/assets/cat-bedsheets.png";
@@ -375,15 +375,14 @@ export default function Shop() {
   });
 
   const products = useMemo<Product[]>(() => {
-    if (apiData && apiData.items.length > 0) return apiData.items.map(apiToShopProduct);
-    return staticProducts;
+    if (!apiData) return [];
+    return apiData.items.filter(p => p.name && p.price).map(apiToShopProduct);
   }, [apiData]);
 
   const categories = useMemo(() => {
-    if (apiCategories && apiCategories.length > 0) {
-      return apiCategories.map((c) => ({ id: c.id, name: c.name, slug: c.slug, count: 0, image: "" as unknown as string }));
-    }
-    return staticCategories;
+    return (apiCategories ?? []).filter(c => c.name && c.slug).map((c) => ({
+      id: c.id, name: c.name, slug: c.slug, count: c.productCount ?? 0, image: "" as unknown as string,
+    }));
   }, [apiCategories]);
 
   /* Filter state */
@@ -400,7 +399,7 @@ export default function Shop() {
   const [gridCols, setGridCols] = useState<3 | 4>(3);
   const [showMobileFilter, setShowMobileFilter] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
-  const [recentlyViewed] = useState(staticProducts.slice(0, 6));
+  const recentlyViewed = products.slice(0, 6);
   const [addedId, setAddedId] = useState<number | null>(null);
 
   /* Live search debounce */

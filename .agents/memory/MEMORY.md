@@ -1,0 +1,2 @@
+- [Admin auth architecture](admin-auth.md) — backend uses session cookies (SameSite=None;Secure), auto-login via ensureAuth() in api.ts before every request
+- [API endpoint structure](api-endpoints.md) — backend routes are /api/products, /api/categories, /api/orders etc. (no /api/public/ prefix); empty DB returns user record as first item — filter with `p.name && p.price`
