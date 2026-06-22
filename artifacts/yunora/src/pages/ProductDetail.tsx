@@ -15,7 +15,6 @@ import MobileNav from "@/components/layout/MobileNav";
 import ProductCard from "@/components/ui/ProductCard";
 import CustomizeModal from "@/components/ui/CustomizeModal";
 import RoomVisualizerModal from "@/components/ui/RoomVisualizerModal";
-import { products as staticProducts } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
@@ -1017,7 +1016,7 @@ export default function ProductDetail() {
             <Link href="/shop" className="text-xs font-bold text-[#3A2A20] border-b border-[#3A2A20] pb-px hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors">View All →</Link>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-            {(related.length > 0 ? related : products.slice(0, 4)).map((p, i) => (
+            {related.map((p, i) => (
               <ProductCard key={p.id} product={p} index={i}/>
             ))}
           </div>

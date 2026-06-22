@@ -233,7 +233,7 @@ function FilterSidebar({
   showInStock, setShowInStock,
   onReset,
 }: {
-  categories: typeof categories;
+  categories: { id: number; name: string; slug: string; count: number }[];
   selectedCats: string[]; setSelectedCats: (v: string[]) => void;
   priceRange: [number, number]; setPriceRange: (v: [number, number]) => void;
   selectedColors: string[]; setSelectedColors: (v: string[]) => void;
