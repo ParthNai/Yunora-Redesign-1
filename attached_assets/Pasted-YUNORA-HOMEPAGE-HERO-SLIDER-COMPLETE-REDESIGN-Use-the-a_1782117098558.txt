@@ -1,0 +1,333 @@
+YUNORA HOMEPAGE HERO SLIDER COMPLETE REDESIGN
+
+Use the attached reference image as the exact visual inspiration.
+
+The current homepage hero section feels static.
+
+Create a luxury full-screen dynamic hero slider.
+
+Inspired by:
+
+• Zara Home
+• Restoration Hardware
+• Pottery Barn
+• MyTrident
+• Apple
+
+====================================================
+
+HERO SECTION
+
+Position:
+
+Top of homepage below header.
+
+Desktop Height:
+
+90vh
+
+Mobile Height:
+
+75vh
+
+Full Width
+
+Luxury cinematic experience.
+
+====================================================
+
+AUTO IMAGE SLIDER
+
+Add 5 premium luxury furnishing images.
+
+Images must automatically change every 3 seconds.
+
+Smooth transitions only.
+
+No sudden image switching.
+
+Animation:
+
+Fade
+
+Zoom
+
+Parallax
+
+Luxury cinematic effect.
+
+====================================================
+
+SLIDE 1
+
+Image:
+
+Luxury Living Room
+
+Headline:
+
+Artisan Fabrics Made For Elegant Spaces
+
+Subheading:
+
+Discover premium furnishing crafted for timeless comfort.
+
+CTA Buttons:
+
+Shop Collection
+
+Explore Categories
+
+====================================================
+
+SLIDE 2
+
+Image:
+
+Luxury Bedroom
+
+Headline:
+
+Transform Your Bedroom Into A Luxury Retreat
+
+Subheading:
+
+Premium bedding and comfort designed for modern homes.
+
+CTA:
+
+Shop Bedroom Collection
+
+====================================================
+
+SLIDE 3
+
+Image:
+
+Designer Curtains
+
+Headline:
+
+Curtains That Elevate Every Interior
+
+Subheading:
+
+Premium textures and elegant finishes for every room.
+
+CTA:
+
+Explore Curtains
+
+====================================================
+
+SLIDE 4
+
+Image:
+
+Luxury Cushions & Decor
+
+Headline:
+
+Curated Comfort For Sophisticated Living
+
+Subheading:
+
+Designer cushions and décor accents inspired by luxury homes.
+
+CTA:
+
+Shop Living Collection
+
+====================================================
+
+SLIDE 5
+
+Image:
+
+Premium Dining Collection
+
+Headline:
+
+Dining Experiences Crafted Beautifully
+
+Subheading:
+
+Elegant table linen and dining essentials for every occasion.
+
+CTA:
+
+Explore Dining
+
+====================================================
+
+TEXT ANIMATION
+
+Each slide must have unique animation.
+
+Fade Up
+
+Slide Up
+
+Text Reveal
+
+Luxury Motion
+
+Duration:
+
+700ms
+
+====================================================
+
+SLIDER CONTROLS
+
+Desktop:
+
+Left Arrow
+
+Right Arrow
+
+Bottom Indicators
+
+Progress Bar
+
+Pause On Hover
+
+====================================================
+
+MOBILE EXPERIENCE
+
+Swipe Left
+
+Swipe Right
+
+Auto Play
+
+Indicators
+
+Large CTA Buttons
+
+Text should never overflow.
+
+====================================================
+
+OVERLAY
+
+Dark Luxury Overlay
+
+Gradient Overlay
+
+Text always readable.
+
+====================================================
+
+TRUST STRIP BELOW HERO
+
+Show:
+
+Free Shipping
+
+Easy Returns
+
+Secure Payments
+
+Premium Quality
+
+10 Year Warranty
+
+24/7 Support
+
+Luxury Icons
+
+====================================================
+
+PERFORMANCE
+
+Images optimized.
+
+Lazy loading enabled.
+
+No layout shifts.
+
+Smooth 60 FPS animation.
+
+====================================================
+
+ADMIN PANEL
+
+Admin can:
+
+Add Images
+
+Change Text
+
+Change Buttons
+
+Change Links
+
+Enable/Disable Slides
+
+Reorder Slides
+
+Change Auto Slide Timing
+
+====================================================
+
+RESPONSIVENESS
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+Perfect scaling.
+
+No text clipping.
+
+No broken layout.
+
+====================================================
+
+DESIGN STYLE
+
+Soft Ivory Background
+
+Warm Beige Accents
+
+Terracotta Highlights
+
+Luxury White Space
+
+Glassmorphism Elements
+
+Playfair Display Headings
+
+Inter Body Text
+
+Premium Shadows
+
+Apple Level UX
+
+Behance Award Winning Design
+
+====================================================
+
+FUNCTIONALITY
+
+Auto slide every 3 seconds.
+
+Manual navigation works.
+
+Swipe works.
+
+Buttons open correct pages.
+
+Indicators work.
+
+Progress bar works.
+
+Admin editing works.
+
+Create a luxury furnishing homepage experience that immediately communicates elegance, trust and premium quality.
