@@ -63,7 +63,7 @@ export default function AnnouncementBar() {
     <div
       className="sticky top-0 z-[60] flex items-center overflow-hidden select-none"
       style={{
-        height: "clamp(28px, 4vw, 36px)",
+        height: "36px",
         background: "rgba(252,249,245,0.88)",
         backdropFilter: "blur(14px)",
         WebkitBackdropFilter: "blur(14px)",

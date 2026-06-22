@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import logo from "@assets/02_1781943228013.png";
+import logoWhite from "@assets/01_1781943231369.png";
 import featuredImg from "@assets/6c37284a-b99d-42ad-8ce5-83157adb6282_1782119220523.jpg";
 
 /* ─── Navigation data ─── */
@@ -410,14 +411,12 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               <div className="absolute -bottom-6 -left-4 w-24 h-24 rounded-full bg-[#D4AF37]/10 pointer-events-none"/>
 
               <div className="relative flex items-center gap-4 px-5 pt-10 pb-5">
-                {/* Logo circle */}
-                <div className="w-14 h-14 rounded-2xl border-2 border-[#D4AF37]/50 flex items-center justify-center shrink-0"
-                  style={{ background: "rgba(212,175,55,0.12)" }}>
-                  <span className="text-2xl font-black text-[#D4AF37]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Y</span>
+                {/* Real logo */}
+                <div className="w-16 h-16 rounded-2xl overflow-hidden shrink-0 flex items-center justify-center border border-[#D4AF37]/30"
+                  style={{ background: "rgba(255,255,255,0.08)" }}>
+                  <img src={logoWhite} alt="YUNORA" className="w-full h-full object-contain p-1"/>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[#D4AF37] font-black text-lg leading-none tracking-wider" style={{ fontFamily: "'Cormorant Garamond', serif" }}>YUNORA</p>
-                  <p className="text-white/70 text-[10px] tracking-[0.2em] mt-0.5">LUXURY FURNISHING</p>
                   <p className="text-white/40 text-[9px] mt-0.5 italic">Crafting Elegant Living Spaces</p>
                 </div>
                 {/* Close button */}
@@ -661,7 +660,7 @@ export default function Header() {
     <>
       {/* ─── Main Header ─── */}
       <header
-        className="sticky top-9 md:top-10 z-[50] w-full transition-all duration-300"
+        className="sticky top-9 z-[50] w-full transition-all duration-300"
         style={{
           background: scrolled
             ? "rgba(253,252,250,0.97)"
