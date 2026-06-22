@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/context/CartContext";
+import Preloader from "@/components/Preloader";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Home from "@/pages/Home";
 import Shop from "@/pages/Shop";
@@ -102,13 +105,45 @@ function Router() {
 }
 
 function App() {
+  const [showPreloader, setShowPreloader] = useState(() => {
+    if (sessionStorage.getItem("yunora_loaded")) return false;
+    return true;
+  });
+  const [contentReady, setContentReady] = useState(() => {
+    return !!sessionStorage.getItem("yunora_loaded");
+  });
+
+  function handlePreloaderComplete() {
+    sessionStorage.setItem("yunora_loaded", "1");
+    setShowPreloader(false);
+    setContentReady(true);
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <CartProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <Router />
-          </WouterRouter>
+          <AnimatePresence>
+            {showPreloader && (
+              <Preloader onComplete={handlePreloaderComplete} />
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence>
+            {contentReady && (
+              <motion.div
+                key="content"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                style={{ minHeight: "100vh" }}
+              >
+                <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+                  <Router />
+                </WouterRouter>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </CartProvider>
         <Toaster />
       </TooltipProvider>
