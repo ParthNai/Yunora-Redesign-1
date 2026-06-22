@@ -14,6 +14,7 @@ import Footer from "@/components/layout/Footer";
 import MobileNav from "@/components/layout/MobileNav";
 import ProductCard from "@/components/ui/ProductCard";
 import CustomizeModal from "@/components/ui/CustomizeModal";
+import RoomVisualizerModal from "@/components/ui/RoomVisualizerModal";
 import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 
@@ -151,6 +152,7 @@ export default function ProductDetail() {
   const [cartAnim,       setCartAnim]       = useState(false);
   const [wishAnim,       setWishAnim]       = useState(false);
   const [customizeOpen,  setCustomizeOpen]  = useState(false);
+  const [vizOpen,        setVizOpen]        = useState(false);
   const [reviewFilter,   setReviewFilter]   = useState("all");
   const [faqSearch,      setFaqSearch]      = useState("");
   const [sampleOrdered,  setSampleOrdered]  = useState(false);
@@ -207,12 +209,15 @@ export default function ProductDetail() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "#FAF8F5", fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col overflow-x-hidden" style={{ background: "#FAF8F5", fontFamily: "'Inter', sans-serif" }}>
       <AnnouncementBar />
       <Header />
 
       {/* Customize Modal */}
       <CustomizeModal open={customizeOpen} onClose={() => setCustomizeOpen(false)} productName={product.name} productType={product.category?.toLowerCase().replace(/\s+/g, "-")} />
+
+      {/* Room Visualizer Modal */}
+      <RoomVisualizerModal open={vizOpen} onClose={() => setVizOpen(false)} productImage={gallery[activeImg]} productName={product.name} />
 
       {/* ─── Sticky Top Bar ─── */}
       <AnimatePresence>
@@ -347,7 +352,7 @@ export default function ProductDetail() {
 
                   {/* View in Your Room */}
                   <button className="absolute bottom-3 left-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-semibold text-[#3A2A20] hover:bg-white transition-all shadow-sm"
-                    onClick={e => { e.stopPropagation(); setActiveTab("visualizer"); }}>
+                    onClick={e => { e.stopPropagation(); setVizOpen(true); }}>
                     <Eye className="h-3 w-3"/> View in Your Room
                   </button>
 

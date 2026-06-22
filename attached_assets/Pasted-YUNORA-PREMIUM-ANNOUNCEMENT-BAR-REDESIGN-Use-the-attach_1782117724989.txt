@@ -1,0 +1,282 @@
+YUNORA PREMIUM ANNOUNCEMENT BAR REDESIGN
+
+Use the attached reference image as the design inspiration.
+
+The current announcement bar feels outdated and visually heavy.
+
+Redesign it completely into a luxury premium announcement experience.
+
+====================================================
+
+GOAL
+
+Create a luxury glassmorphism announcement bar.
+
+It should look elegant, premium and easy to read.
+
+Inspired by:
+
+• Apple
+• Zara Home
+• Restoration Hardware
+• MyTrident
+
+====================================================
+
+CURRENT PROBLEMS
+
+Bar is too thick.
+
+Background color feels heavy.
+
+Text is not prominent enough.
+
+Animation feels basic.
+
+Overall premium feel is missing.
+
+====================================================
+
+NEW DESIGN
+
+Height:
+
+Desktop:
+34px - 38px
+
+Mobile:
+28px - 32px
+
+Make the bar thinner and more elegant.
+
+====================================================
+
+BACKGROUND
+
+Luxury transparent glass effect.
+
+Semi-transparent ivory glass.
+
+Backdrop blur:
+
+12px - 20px
+
+Subtle warm beige gradient.
+
+Very light opacity.
+
+Do NOT use dark colors.
+
+====================================================
+
+TEXT STYLE
+
+Font:
+
+Inter
+
+Weight:
+
+500-600
+
+Desktop Size:
+
+13px - 14px
+
+Mobile Size:
+
+11px - 12px
+
+Color:
+
+Dark charcoal
+
+High readability.
+
+Perfect contrast.
+
+====================================================
+
+CONTENT ITEMS
+
+🚚 Free Shipping Above ₹999
+
+🔒 Secure Payments
+
+🛡 10 Year Warranty
+
+✨ Exclusive Collections
+
+⭐ Premium Quality
+
+↩ Easy Returns
+
+🎁 Festive Offers
+
+====================================================
+
+LAYOUT
+
+Each item separated by elegant divider.
+
+Luxury spacing.
+
+Icons aligned perfectly.
+
+Text vertically centered.
+
+No crowding.
+
+====================================================
+
+ANIMATION
+
+Continuous horizontal scrolling.
+
+Ultra smooth.
+
+60 FPS.
+
+Infinite loop.
+
+No jerky movement.
+
+Speed:
+
+Very slow luxury movement.
+
+Pause when hovered.
+
+Resume automatically.
+
+====================================================
+
+CONTROLS
+
+Desktop:
+
+Previous Button
+
+Next Button
+
+Pause Button
+
+Play Button
+
+Elegant minimalist icons.
+
+====================================================
+
+SCROLL BEHAVIOR
+
+Announcement bar must remain visible.
+
+Do NOT disappear on page scroll.
+
+Sticky at top.
+
+Always visible.
+
+Header remains below it.
+
+====================================================
+
+MOBILE VERSION
+
+Horizontal auto slider.
+
+Swipe support.
+
+Touch friendly.
+
+Perfect readability.
+
+No text cut-off.
+
+No overflow.
+
+====================================================
+
+GLASSMORPHISM EFFECT
+
+Border:
+
+1px subtle white border.
+
+Soft shadow.
+
+Luxury glow effect.
+
+Rounded corners:
+
+12px desktop
+
+10px mobile
+
+====================================================
+
+ADMIN PANEL
+
+Admin can:
+
+Add new announcements.
+
+Remove announcements.
+
+Reorder announcements.
+
+Enable / disable announcements.
+
+Change scrolling speed.
+
+Schedule announcements.
+
+====================================================
+
+RESPONSIVENESS
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+Perfect alignment everywhere.
+
+====================================================
+
+FUNCTIONALITY
+
+Auto scroll works.
+
+Pause on hover works.
+
+Swipe on mobile works.
+
+Sticky behavior works.
+
+Admin controls work.
+
+No text clipping.
+
+No layout shifts.
+
+====================================================
+
+FINAL RESULT
+
+The announcement bar should feel like a luxury premium brand component, not a typical ecommerce offer strip.
+
+It should immediately communicate:
+
+Trust
+
+Premium Quality
+
+Luxury Experience
+
+Professional Furnishing Brand
+
+Make it significantly better than the current version.

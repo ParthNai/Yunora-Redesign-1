@@ -1,0 +1,323 @@
+YUNORA MOBILE MENU COMPLETE REDESIGN
+
+Use the attached reference image as inspiration only.
+
+Do NOT copy the current design.
+
+Create a significantly more premium, modern and luxury mobile navigation experience.
+
+====================================================
+
+CURRENT PROBLEM
+
+Current mobile menu opens from the right side.
+
+This is rejected.
+
+The menu should open from the LEFT side.
+
+Current design feels basic.
+
+Current spacing and hierarchy are not premium enough.
+
+====================================================
+
+NEW MOBILE MENU EXPERIENCE
+
+Create a luxury app-like navigation.
+
+Inspired by:
+
+• Zara Home
+• Apple
+• Restoration Hardware
+• MyTrident
+• Pottery Barn
+
+====================================================
+
+MENU OPEN ANIMATION
+
+When user clicks menu icon:
+
+Dark luxury backdrop appears.
+
+Background blur 20px.
+
+Menu slides from LEFT.
+
+Smooth spring animation.
+
+Duration:
+
+350ms
+
+Menu width:
+
+90% screen width
+
+Leave a small visible backdrop area on right side.
+
+====================================================
+
+HEADER AREA
+
+Top Luxury Brand Panel
+
+Large YUNORA Logo
+
+Luxury Furnishing
+
+Premium Tagline:
+
+Crafting Elegant Living Spaces
+
+Close Button:
+
+Luxury circular glass button
+
+Smooth hover and tap animation.
+
+====================================================
+
+FEATURED BANNER
+
+Below logo section.
+
+Small premium promotional card.
+
+Example:
+
+UP TO 40% OFF
+
+Luxury Furnishings
+
+Shop Now Button
+
+Luxury image background.
+
+====================================================
+
+MAIN NAVIGATION
+
+Large touch targets.
+
+Minimum height:
+
+56px
+
+Premium typography.
+
+Menu Items:
+
+Home
+
+Shop
+
+Categories
+
+Collections
+
+New Arrivals
+
+Best Sellers
+
+Manufacturing Excellence
+
+Warranty Center
+
+About Us
+
+Contact Us
+
+Blogs
+
+Become Dealer
+
+Track Order
+
+Feedback
+
+====================================================
+
+ACCORDION MENUS
+
+Shop
+
+Categories
+
+Collections
+
+must expand smoothly.
+
+Show:
+
+Category Images
+
+Subcategories
+
+Quick Links
+
+Featured Collection
+
+Luxury animation.
+
+====================================================
+
+ACCOUNT SECTION
+
+Luxury card.
+
+My Account
+
+Wishlist
+
+Orders
+
+Rewards
+
+Coupons
+
+Saved Addresses
+
+Logout
+
+====================================================
+
+QUICK ACTIONS
+
+WhatsApp Support
+
+Call Support
+
+Email Support
+
+Store Location
+
+Track Order
+
+====================================================
+
+BOTTOM TRUST SECTION
+
+Free Shipping
+
+Easy Returns
+
+Secure Payments
+
+10 Year Warranty
+
+Premium Quality
+
+====================================================
+
+FOOTER AREA
+
+Instagram
+
+Facebook
+
+Pinterest
+
+YouTube
+
+Terms
+
+Privacy Policy
+
+====================================================
+
+DESIGN STYLE
+
+Soft Ivory Background
+
+Warm Beige Accents
+
+Terracotta Highlights
+
+Luxury White Space
+
+Glassmorphism
+
+Premium Shadows
+
+Rounded Corners
+
+Playfair Display Headings
+
+Inter Body Text
+
+Apple Level UX
+
+====================================================
+
+MOBILE UX
+
+Everything thumb-friendly.
+
+Large touch targets.
+
+Smooth scrolling.
+
+No cramped layout.
+
+No text overlap.
+
+Perfect spacing.
+
+====================================================
+
+FUNCTIONALITY
+
+Menu opens from LEFT.
+
+Menu closes on:
+
+Close button
+
+Swipe left
+
+Tap backdrop
+
+ESC key
+
+Accordion works.
+
+Links work.
+
+Account links work.
+
+Quick actions work.
+
+No dead links.
+
+====================================================
+
+RESPONSIVENESS
+
+Android
+
+iPhone
+
+Tablet
+
+All screen sizes.
+
+====================================================
+
+FINAL GOAL
+
+The mobile menu should feel like a luxury mobile application, not a basic ecommerce drawer.
+
+It should immediately communicate:
+
+Luxury
+
+Trust
+
+Premium Quality
+
+Professional Furnishing Brand
+
+Make it noticeably better than the current design.
