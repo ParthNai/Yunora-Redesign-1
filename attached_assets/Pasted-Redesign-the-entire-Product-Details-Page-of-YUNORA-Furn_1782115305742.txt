@@ -1,0 +1,517 @@
+Redesign the entire Product Details Page of YUNORA Furnishing.
+
+Current product page feels basic.
+
+Create a world-class luxury ecommerce product page.
+
+Inspired by:
+
+• Zara Home
+• Pottery Barn
+• Restoration Hardware
+• MyTrident
+• Apple
+• Amazon Product Experience
+• Flipkart Product Experience
+
+The goal:
+
+Increase trust.
+
+Increase conversions.
+
+Increase Add To Cart.
+
+Increase Buy Now clicks.
+
+Create a premium furnishing shopping experience.
+
+====================================================
+
+DESKTOP LAYOUT
+
+SECTION 1
+
+PRODUCT HERO AREA
+
+Left Side (60%)
+
+Large Product Gallery
+
+Vertical thumbnails
+
+Image Zoom on Hover
+
+360 Degree View
+
+Video Preview
+
+Lifestyle Images
+
+Fabric Close-up Images
+
+Room Setup Images
+
+Click thumbnail → instantly change image
+
+Fullscreen Gallery Option
+
+Luxury smooth transitions
+
+----------------------------------------------------
+
+Right Side (40%)
+
+Product Information
+
+YUNORA Signature Collection
+
+Product Name
+
+Premium Rating
+
+Review Count
+
+Verified Purchase Badge
+
+Best Seller Badge
+
+Trending Badge
+
+Limited Stock Badge
+
+Price
+
+MRP
+
+Discount %
+
+EMI Available
+
+Free Shipping
+
+Estimated Delivery Date
+
+Availability Status
+
+====================================================
+
+VARIANT SELECTOR
+
+Colors
+
+Fabric Options
+
+Patterns
+
+Sizes
+
+Single
+
+Double
+
+Queen
+
+King
+
+Super King
+
+Luxury visual swatches
+
+====================================================
+
+TRUST SECTION
+
+100% Premium Cotton
+
+10 Year Warranty
+
+Free Shipping
+
+Easy Returns
+
+Secure Payments
+
+Made In India
+
+Anti Fade Technology
+
+Skin Friendly
+
+Luxury icons
+
+====================================================
+
+CTA SECTION
+
+Large Add To Cart Button
+
+Luxury Black Button
+
+Large Buy Now Button
+
+Luxury Beige Button
+
+Wishlist Button
+
+Share Button
+
+WhatsApp Inquiry Button
+
+====================================================
+
+STICKY PURCHASE BAR
+
+While scrolling:
+
+Show:
+
+Product Image
+
+Price
+
+Rating
+
+Add To Cart
+
+Buy Now
+
+Sticky at top
+
+Desktop and Mobile
+
+====================================================
+
+PRODUCT HIGHLIGHTS
+
+Premium Fabric
+
+Luxury Finish
+
+Soft Touch Feel
+
+Long Lasting Color
+
+Machine Washable
+
+Breathable Material
+
+Elegant icon cards
+
+====================================================
+
+SECTION 2
+
+PRODUCT DESCRIPTION
+
+Luxury editorial layout
+
+Large furnishing image
+
+Storytelling content
+
+Explain:
+
+Fabric
+
+Comfort
+
+Luxury Feel
+
+Craftsmanship
+
+Benefits
+
+====================================================
+
+SECTION 3
+
+PRODUCT SPECIFICATIONS
+
+Material
+
+Thread Count
+
+Fabric Type
+
+Dimensions
+
+Weight
+
+Color
+
+Pattern
+
+Wash Care
+
+Country Of Origin
+
+Manufacturer
+
+Warranty
+
+Presented in luxury table
+
+====================================================
+
+SECTION 4
+
+WHY YUNORA
+
+Premium Materials
+
+Luxury Designs
+
+Trusted Brand
+
+Fast Delivery
+
+Long Warranty
+
+Beautiful icon cards
+
+====================================================
+
+SECTION 5
+
+ROOM VISUALIZATION
+
+Show product in:
+
+Bedroom
+
+Living Room
+
+Luxury Villa
+
+Modern Apartment
+
+Interactive gallery
+
+====================================================
+
+SECTION 6
+
+CUSTOMER REVIEWS
+
+Large Review Section
+
+Verified Reviews
+
+Customer Images
+
+Customer Videos
+
+Star Ratings
+
+Review Breakdown
+
+5 Star %
+
+4 Star %
+
+3 Star %
+
+2 Star %
+
+1 Star %
+
+Review Filtering
+
+Sort Reviews
+
+Most Recent
+
+Highest Rated
+
+With Photos
+
+====================================================
+
+SECTION 7
+
+QUESTIONS & ANSWERS
+
+Customer Questions
+
+Brand Answers
+
+Search Questions
+
+Ask New Question
+
+====================================================
+
+SECTION 8
+
+FREQUENTLY BOUGHT TOGETHER
+
+Luxury Product Cards
+
+Bundle Discount
+
+Add Bundle To Cart
+
+====================================================
+
+SECTION 9
+
+SIMILAR PRODUCTS
+
+You May Also Like
+
+Recommended Products
+
+Recently Viewed Products
+
+Trending Products
+
+====================================================
+
+SECTION 10
+
+DELIVERY CHECKER
+
+Enter Pincode
+
+Check Delivery Date
+
+Shipping Cost
+
+COD Availability
+
+====================================================
+
+SECTION 11
+
+WARRANTY SECTION
+
+Warranty Coverage
+
+Claim Process
+
+Warranty Benefits
+
+Luxury timeline layout
+
+====================================================
+
+SECTION 12
+
+FABRIC TECHNOLOGY
+
+Luxury infographic
+
+Thread Count
+
+Breathability
+
+Durability
+
+Softness
+
+Color Retention
+
+====================================================
+
+SECTION 13
+
+INSTAGRAM GALLERY
+
+Real Customer Homes
+
+User Generated Content
+
+Luxury Grid
+
+====================================================
+
+MOBILE DESIGN
+
+Must not simply shrink desktop.
+
+Create dedicated mobile experience.
+
+Sticky Bottom Bar:
+
+Add To Cart
+
+Buy Now
+
+Always visible.
+
+Accordion Sections:
+
+Description
+
+Specifications
+
+Reviews
+
+Warranty
+
+FAQs
+
+Large touch targets.
+
+Luxury animations.
+
+Fast performance.
+
+====================================================
+
+UI DESIGN
+
+Luxury White Space
+
+Soft Ivory Background
+
+Warm Beige Accents
+
+Terracotta Highlights
+
+Glassmorphism
+
+Premium Shadows
+
+Playfair Display Headings
+
+Inter Body Text
+
+Luxury Hover Effects
+
+Smooth Animations
+
+Apple Level UX
+
+====================================================
+
+FUNCTIONALITY
+
+Everything must work.
+
+Image gallery works.
+
+Zoom works.
+
+Variants work.
+
+Reviews work.
+
+Wishlist works.
+
+Share works.
+
+Add To Cart works.
+
+Buy Now works.
+
+Sticky purchase bar works.
+
+Mobile bottom bar works.
+
+No dummy content.
+
+Use dynamic product data from database.
+
+Create a conversion-focused luxury furnishing product page better than MyTrident.

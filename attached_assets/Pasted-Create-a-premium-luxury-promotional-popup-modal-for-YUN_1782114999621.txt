@@ -1,0 +1,210 @@
+Create a premium luxury promotional popup modal for YUNORA Furnishing.
+
+IMPORTANT:
+This popup must automatically appear after the website preloader finishes loading.
+
+Popup should appear:
+- 2 seconds after page load
+- Only once per visitor every 24 hours
+- Fully responsive on Desktop, Tablet and Mobile
+
+====================================================
+
+BRAND STYLE
+
+Brand: YUNORA Furnishing
+
+Theme:
+- Luxury Furnishing Brand
+- Premium Home Decor Experience
+- Inspired by MyTrident, Zara Home, Pottery Barn, Restoration Hardware
+- Apple Level UI Design
+
+Colors:
+- Soft Ivory (#F8F5F0)
+- Warm Beige (#D8C3A5)
+- Terracotta Accent (#F47C4D)
+- Rich Luxury Brown (#3A2A20)
+- Gold Highlights (#D4AF37)
+
+Typography:
+- Playfair Display (Headings)
+- Inter (Body Text)
+
+====================================================
+
+POPUP STRUCTURE
+
+Background:
+- Fullscreen dark overlay
+- Backdrop blur 20px
+- Smooth fade animation
+
+Popup Container:
+- Luxury glassmorphism card
+- Rounded corners 28px
+- Premium shadow
+- Frosted glass effect
+- Width: 1000px desktop
+- Width: 90vw mobile
+
+====================================================
+
+LEFT SIDE CONTENT
+
+Display YUNORA Logo at top
+
+Text:
+
+EXCLUSIVE YUNORA OFFER
+
+Luxury Living Starts Here
+
+UP TO
+
+40% OFF
+
+Premium Furnishing Collection
+
+Extra 5% OFF
+On Prepaid Orders
+
+Coupon Code:
+
+YUNORA5
+
+Countdown Timer:
+
+11 Days
+01 Hours
+33 Minutes
+50 Seconds
+
+====================================================
+
+EMAIL CAPTURE
+
+Input:
+
+Enter Email Address
+
+Button:
+
+CLAIM MY OFFER
+
+====================================================
+
+TRUST BADGES
+
+Premium Quality
+
+Free Delivery
+
+Secure Payments
+
+10 Year Warranty
+
+Made In India
+
+====================================================
+
+RIGHT SIDE IMAGE
+
+Show premium luxury furnishing image
+
+Luxury bedroom
+
+Premium curtains
+
+Designer cushions
+
+Elegant interior
+
+Warm luxury lighting
+
+Image should cover entire right side
+
+====================================================
+
+BUTTONS
+
+Primary Button:
+
+Claim My Offer
+
+Secondary Button:
+
+Continue Shopping
+
+====================================================
+
+CLOSE BUTTON
+
+Top Right
+
+Luxury circular glass button
+
+Smooth hover animation
+
+====================================================
+
+ANIMATION
+
+Popup Open:
+
+Scale 0.9 → 1
+
+Fade In
+
+Blur In
+
+Duration:
+0.5 seconds
+
+Popup Close:
+
+Fade Out
+
+Scale Down
+
+====================================================
+
+MOBILE VERSION
+
+Full screen popup
+
+Luxury mobile experience
+
+Image on top
+
+Offer content below
+
+Sticky CTA button
+
+Large touch targets
+
+====================================================
+
+FUNCTIONALITY
+
+Show popup after preloader finishes.
+
+Store popup state in localStorage.
+
+Do not show again for 24 hours after closing.
+
+Close on:
+
+- X button
+- ESC key
+- Click outside popup
+
+====================================================
+
+Use uploaded YUNORA logo.
+
+Make popup feel more premium than MyTrident.
+
+Design quality should be Behance award-winning.
+
+Luxury furnishing brand experience only.
