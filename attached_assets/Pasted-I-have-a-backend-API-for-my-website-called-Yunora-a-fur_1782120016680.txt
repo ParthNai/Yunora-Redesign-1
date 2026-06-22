@@ -1,0 +1,122 @@
+I have a backend API for my website called Yunora (a furniture/home furnishings business). The backend is live at:
+
+https://yunora-enterprise-system-1.onrender.com
+
+Please integrate the following public APIs into my existing website. All endpoints are GET (no login required) or POST to submit forms. All responses are JSON.
+
+📦 PRODUCTS
+GET /api/public/products
+GET /api/public/products?search=chair&page=1&limit=20
+GET /api/public/products?category=5
+GET /api/public/products/:id
+Returns: { items: [{id, name, sku, brand, price, salePrice, stock, color, material, description, imageUrl, categoryId, createdAt}], total, page, limit, totalPages }
+Use for: product listing page, product detail page, search results.
+
+🗂️ CATEGORIES
+GET /api/public/categories
+Returns: [{id, name, slug, parentId, imageUrl}]
+Use for: navigation menu, category filters on product pages.
+
+🖼️ BANNERS
+GET /api/public/banners
+GET /api/public/banners?type=homepage
+Types: homepage, mobile, category, festival, collection
+Returns: [{id, title, imageUrl, linkUrl, type, priority, startsAt, expiresAt}]
+Use for: homepage hero slider, promotional banners.
+
+🏷️ OFFERS (ticker / announcement bar)
+GET /api/public/offers
+Returns: [{id, text, priority, startsAt, expiresAt}]
+Use for: top announcement bar / scrolling offer text.
+
+🎯 CAMPAIGNS
+GET /api/public/campaigns
+Returns: [{id, name, type, description, startsAt, endsAt}]
+Use for: seasonal sale pages, special promotion sections.
+
+🏪 DEALERS (store locator)
+GET /api/public/dealers
+GET /api/public/dealers?city=Mumbai
+Returns: [{id, businessName, contactName, phone, city}]
+Use for: "Find a Dealer" / store locator page.
+
+⭐ REVIEWS
+GET /api/public/reviews
+GET /api/public/reviews?productName=sofa&page=1&limit=10
+Returns: { items: [{id, customerName, productName, rating, comment, createdAt}], total, page, totalPages }
+Use for: homepage testimonials section, product page reviews.
+
+📝 BLOGS
+GET /api/public/blogs
+GET /api/public/blogs?category=tips&page=1&limit=10
+GET /api/public/blogs/:slug
+Returns: { items: [{id, title, slug, excerpt, imageUrl, category, tags, metaTitle, metaDescription, createdAt}], total, page, totalPages }
+Use for: blog listing page, individual blog post page, SEO meta tags.
+
+🏠 HOMEPAGE SECTIONS (CMS)
+GET /api/public/homepage-sections
+Returns: [{id, sectionType, title, subtitle, content, imageUrl, linkUrl, buttonText, sortOrder}]
+Section types: hero, featured_products, testimonials, about, usp, newsletter, custom
+Use for: dynamically rendering homepage content managed from admin panel.
+
+⚙️ SITE SETTINGS
+GET /api/public/site-settings
+Returns: {siteName, email, phone, whatsapp, address, facebook, instagram, youtube, linkedin, twitter, pinterest, googleMapsEmbed}
+Use for: footer contact info, social media links, header phone number.
+
+📦 STOCK CHECK
+GET /api/public/inventory/:productId
+Returns: {productId, totalStock, warehouses: [{warehouseId, stock, lowStockThreshold}]}
+Use for: "In Stock" / "Out of Stock" badge on product pages.
+
+📍 ORDER TRACKING
+GET /api/public/orders/:orderNumber
+Returns: {orderNumber, customerName, status, total, trackingNumber, createdAt, timeline: [{status, label, completed, active}]}
+Timeline statuses in order: pending → confirmed → processing → shipped → delivered
+Use for: order tracking page where customer enters their order number.
+
+📤 FORM SUBMISSIONS (POST)
+Place an Order:
+
+POST /api/public/orders
+Body: { customerName, customerEmail, total, items, city, phone }
+Response: { ok: true, orderNumber: "YUN-...", id }
+Contact Form / Enquiry:
+
+POST /api/public/leads
+Body: { name, email, phone, source, notes }
+Source options: "contact_form", "product_inquiry", "call_request", "whatsapp"
+Response: { ok: true, message }
+Submit Product Review:
+
+POST /api/public/reviews
+Body: { customerName, productName, rating (1-5), comment }
+Response: { ok: true, message }
+Warranty Claim:
+
+POST /api/public/warranty
+Body: { customerName, productName, orderId (optional), issue }
+Response: { ok: true, message }
+Support Ticket:
+
+POST /api/public/tickets
+Body: { subject, customerName, customerEmail, type }
+Type options: "product_support", "warranty", "delivery", "general"
+Response: { ok: true, message }
+Dealer Application:
+
+POST /api/public/dealer-apply
+Body: { businessName, contactName, email, phone, city }
+Response: { ok: true, id }
+Validate Coupon Code:
+
+POST /api/public/coupons/validate
+Body: { code, orderAmount }
+Response (valid): { valid: true, type: "percentage"|"fixed", value, minOrderAmount }
+Response (invalid): { valid: false, error: "..." }
+⚠️ Important Notes:
+The Render backend may take 8–10 seconds to respond on first request (free tier sleeps). Show a loading spinner.
+All dates are ISO 8601 strings (e.g. "2024-06-20T14:30:00.000Z")
+Prices are numbers in INR (₹)
+The database starts empty — content added via admin panel at https://educationapp-6ca39.web.app shows immediately on these APIs
+No API key or authentication needed for any of these endpoints

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@assets/image_1782119371063.png";
-import bgImg from "@assets/6c37284a-b99d-42ad-8ce5-83157adb6282_1782119220523.jpg";
+import bgImg from "@/assets/cat-bedsheets.png";
 
 interface PreloaderProps {
   onComplete: () => void;
