@@ -11,26 +11,27 @@ import {
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import logo from "@assets/02_1781943228013.png";
+import featuredImg from "@assets/6c37284a-b99d-42ad-8ce5-83157adb6282_1782119220523.jpg";
 
 /* ─── Navigation data ─── */
 const SHOP_CATEGORIES = [
-  { label: "Bedsheets",           href: "/category/bedsheets",           icon: "🛏️" },
-  { label: "Curtains",            href: "/category/curtains",            icon: "🪟" },
-  { label: "Cushion Covers",      href: "/category/cushion-covers",      icon: "🪑" },
-  { label: "Comforters",          href: "/category/comforters",          icon: "☁️" },
-  { label: "Quilts & Dohars",     href: "/category/quilts",              icon: "🎀" },
-  { label: "Table Linen",         href: "/category/table-linen",         icon: "🍽️" },
-  { label: "Blankets",            href: "/category/blankets",            icon: "🧣" },
-  { label: "Mattress Protectors", href: "/category/mattress-protectors", icon: "🛡️" },
-  { label: "View All Categories", href: "/categories",                   icon: "→",  isLink: true },
+  { label: "Bedsheets",           href: "/category/bedsheets" },
+  { label: "Curtains",            href: "/category/curtains" },
+  { label: "Cushion Covers",      href: "/category/cushion-covers" },
+  { label: "Comforters",          href: "/category/comforters" },
+  { label: "Quilts & Dohars",     href: "/category/quilts" },
+  { label: "Table Linen",         href: "/category/table-linen" },
+  { label: "Blankets",            href: "/category/blankets" },
+  { label: "Mattress Protectors", href: "/category/mattress-protectors" },
+  { label: "View All Categories", href: "/categories", isLink: true },
 ];
 const SHOP_ROOMS = [
-  { label: "Bedroom",     href: "/category/bedroom",     img: "🛏️" },
-  { label: "Living Room", href: "/category/living-room", img: "🛋️" },
-  { label: "Dining Room", href: "/category/dining-room", img: "🍽️" },
-  { label: "Kids Room",   href: "/category/kids-room",   img: "🧸" },
-  { label: "Guest Room",  href: "/category/guest-room",  img: "🏡" },
-  { label: "Outdoor",     href: "/category/outdoor",     img: "🌿" },
+  { label: "Bedroom",     href: "/category/bedroom" },
+  { label: "Living Room", href: "/category/living-room" },
+  { label: "Dining Room", href: "/category/dining-room" },
+  { label: "Kids Room",   href: "/category/kids-room" },
+  { label: "Guest Room",  href: "/category/guest-room" },
+  { label: "Outdoor",     href: "/category/outdoor" },
 ];
 const SHOP_COLLECTIONS = [
   { label: "Luxury Collection",    href: "/collection/luxury" },
@@ -102,15 +103,18 @@ function ShopMegaMenu({ onClose }: { onClose: () => void }) {
           {/* Col 1: By Category */}
           <div>
             <p className="text-[9px] tracking-[0.3em] font-bold text-[#D4AF37] mb-4 uppercase">Shop By Category</p>
-            <ul className="space-y-1">
+            <ul className="space-y-0.5">
               {SHOP_CATEGORIES.map(c => (
                 <li key={c.label}>
                   <Link href={c.href} onClick={onClose}
-                    className={`flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-sm transition-all hover:bg-[#F5F0EA] group ${c.isLink ? "text-[#D4AF37] font-semibold text-xs mt-2" : "text-[#3A2A20]"}`}>
-                    <span className="text-base">{c.icon}</span>
+                    className={`flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-sm transition-all hover:bg-[#F5F0EA] group ${c.isLink ? "text-[#D4AF37] font-semibold text-xs mt-3" : "text-[#3A2A20]"}`}>
+                    {!c.isLink && (
+                      <svg className="h-3 w-3 shrink-0 text-[#D4AF37]" viewBox="0 0 12 12" fill="none">
+                        <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
                     <span className={c.isLink ? "border-b border-[#D4AF37]" : ""}>{c.label}</span>
                     {c.isLink && <ArrowRight className="h-3 w-3 ml-auto"/>}
-                    {!c.isLink && <ChevronRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-40 transition-opacity"/>}
                   </Link>
                 </li>
               ))}
@@ -120,12 +124,14 @@ function ShopMegaMenu({ onClose }: { onClose: () => void }) {
           {/* Col 2: By Room */}
           <div>
             <p className="text-[9px] tracking-[0.3em] font-bold text-[#D4AF37] mb-4 uppercase">Shop By Room</p>
-            <ul className="space-y-1">
+            <ul className="space-y-0.5">
               {SHOP_ROOMS.map(r => (
                 <li key={r.label}>
                   <Link href={r.href} onClick={onClose}
                     className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-sm text-[#3A2A20] transition-all hover:bg-[#F5F0EA] group">
-                    <span className="text-base">{r.img}</span>
+                    <svg className="h-3 w-3 shrink-0 text-[#D4AF37]" viewBox="0 0 12 12" fill="none">
+                      <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                     {r.label}
                     <ChevronRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-40 transition-opacity"/>
                   </Link>
@@ -137,12 +143,14 @@ function ShopMegaMenu({ onClose }: { onClose: () => void }) {
           {/* Col 3: Collections */}
           <div>
             <p className="text-[9px] tracking-[0.3em] font-bold text-[#D4AF37] mb-4 uppercase">Shop By Collection</p>
-            <ul className="space-y-1">
+            <ul className="space-y-0.5">
               {SHOP_COLLECTIONS.map(c => (
                 <li key={c.label}>
                   <Link href={c.href} onClick={onClose}
                     className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-sm text-[#3A2A20] transition-all hover:bg-[#F5F0EA] group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D8C3A5] group-hover:bg-[#D4AF37] transition-colors shrink-0"/>
+                    <svg className="h-3 w-3 shrink-0 text-[#D4AF37]" viewBox="0 0 12 12" fill="none">
+                      <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                     {c.label}
                     <ChevronRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-40 transition-opacity"/>
                   </Link>
@@ -151,23 +159,23 @@ function ShopMegaMenu({ onClose }: { onClose: () => void }) {
             </ul>
           </div>
 
-          {/* Col 4: Featured */}
+          {/* Col 4: Featured editorial banner */}
           <div>
             <p className="text-[9px] tracking-[0.3em] font-bold text-[#D4AF37] mb-4 uppercase">Featured</p>
-            <div className="rounded-2xl overflow-hidden border border-[#E8DDD0] group cursor-pointer relative" onClick={onClose}>
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#D8C3A5] to-[#9E8A78] flex items-center justify-center">
-                <div className="text-center p-5">
-                  <p className="text-[#3A2A20] text-base font-bold leading-tight mb-1" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                    Luxury That Complements Your Home
-                  </p>
-                  <p className="text-[#3A2A20]/70 text-xs leading-relaxed mb-3">Explore our premium range crafted for comfort and elegance.</p>
-                  <Link href="/collections" onClick={onClose}
-                    className="inline-flex items-center gap-1.5 bg-[#3A2A20] text-white text-xs font-bold px-4 py-2 rounded-xl hover:bg-[#4a3830] transition-colors">
-                    Shop Now <ArrowRight className="h-3 w-3"/>
-                  </Link>
-                </div>
+            <Link href="/collections" onClick={onClose}
+              className="group block rounded-2xl overflow-hidden relative cursor-pointer" style={{ aspectRatio: "4/3" }}>
+              <img src={featuredImg} alt="Premium Living" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(58,42,32,0.82) 0%, rgba(58,42,32,0.25) 55%, transparent 100%)" }}/>
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <p className="text-[10px] tracking-[0.2em] text-[#D4AF37] mb-1 uppercase font-semibold">Premium Living</p>
+                <p className="text-white font-bold text-base leading-tight mb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  Luxury furnishing crafted for timeless comfort & elegance.
+                </p>
+                <span className="inline-flex items-center gap-1.5 bg-[#3A2A20] text-white text-[11px] font-bold px-4 py-2 rounded-lg hover:bg-[#4a3830] transition-colors">
+                  Shop Now <ArrowRight className="h-3 w-3"/>
+                </span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -189,13 +197,15 @@ function CategoriesMegaMenu({ onClose }: { onClose: () => void }) {
           </Link>
         </div>
         <div className="grid grid-cols-8 gap-3">
-          {CATEGORIES_GRID.map((cat, i) => (
+          {CATEGORIES_GRID.map((cat) => (
             <Link key={cat.label} href={cat.href} onClick={onClose}
-              className="group flex flex-col items-center text-center p-3 rounded-2xl border border-[#E8DDD0] hover:border-[#D4AF37] hover:shadow-md transition-all bg-white">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D8C3A5] to-[#9E8A78] mb-2 flex items-center justify-center text-lg">
-                {["🛏️","🪟","🪑","☁️","🎀","🍽️","🧣","🛡️"][i]}
+              className="group flex flex-col items-center text-center p-3 rounded-2xl border border-[#E8DDD0] hover:border-[#D4AF37] hover:shadow-md transition-all duration-200 bg-white">
+              <div className="w-10 h-10 rounded-full border border-[#D4AF37]/30 group-hover:border-[#D4AF37] mb-2.5 flex items-center justify-center transition-colors" style={{ background: "#FFFBF0" }}>
+                <svg className="h-4 w-4 text-[#D4AF37]" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
-              <p className="text-xs font-bold text-[#3A2A20] leading-tight mb-0.5">{cat.label}</p>
+              <p className="text-xs font-bold text-[#3A2A20] leading-tight mb-0.5 group-hover:text-[#D4AF37] transition-colors">{cat.label}</p>
               <p className="text-[9px] text-[#9E8A78]">{cat.count}</p>
             </Link>
           ))}
@@ -219,17 +229,18 @@ function CollectionsMegaMenu({ onClose }: { onClose: () => void }) {
           </Link>
         </div>
         <div className="grid grid-cols-3 gap-4">
-          {COLLECTIONS_LIST.map((col, i) => (
+          {COLLECTIONS_LIST.map((col) => (
             <Link key={col.label} href={col.href} onClick={onClose}
-              className="group flex items-center gap-3 p-4 rounded-2xl border border-[#E8DDD0] hover:border-[#D4AF37] hover:shadow-md transition-all bg-white">
-              <div className="w-14 h-14 rounded-xl shrink-0 flex items-center justify-center text-2xl"
-                style={{ background: `hsl(${30 + i * 18}, 30%, ${85 - i * 3}%)` }}>
-                {["✨","🌟","💎","🎀","🪄","👑"][i]}
+              className="group flex items-center gap-4 p-4 rounded-2xl border border-[#E8DDD0] hover:border-[#D4AF37] hover:shadow-md transition-all duration-200 bg-white">
+              <div className="w-10 h-10 rounded-full border border-[#D4AF37]/30 group-hover:border-[#D4AF37] flex items-center justify-center shrink-0 transition-colors" style={{ background: "#FFFBF0" }}>
+                <svg className="h-4 w-4 text-[#D4AF37]" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
               <div>
                 <p className="text-sm font-bold text-[#3A2A20] group-hover:text-[#D4AF37] transition-colors">{col.label}</p>
                 <p className="text-[11px] text-[#9E8A78] mt-0.5 leading-snug">{col.desc}</p>
-                <span className="text-[10px] text-[#D4AF37] flex items-center gap-1 mt-1 font-semibold">
+                <span className="inline-flex items-center gap-1 text-[10px] text-[#D4AF37] mt-1.5 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                   Explore <ArrowRight className="h-2.5 w-2.5"/>
                 </span>
               </div>
@@ -316,9 +327,9 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
 /* ─── Mobile Premium Left-Slide Menu ─── */
 const MOBILE_NAV = [
   { label: "Home",                   href: "/",               icon: Home,      sub: null },
-  { label: "Shop",                   href: "/shop",           icon: ShoppingBag, sub: SHOP_CATEGORIES.slice(0,-1).map(c => ({ label: c.label, href: c.href, emoji: c.icon })) },
-  { label: "Categories",             href: "/categories",     icon: LayoutGrid,  sub: CATEGORIES_GRID.map(c => ({ label: c.label, href: c.href, emoji: ["🛏️","🪟","🪑","☁️","🎀","🍽️","🧣","🛡️"][CATEGORIES_GRID.indexOf(c)] })) },
-  { label: "Collections",            href: "/collections",    icon: Layers,      sub: COLLECTIONS_LIST.map(c => ({ label: c.label, href: c.href, emoji: ["✨","🌟","💎","🎀","🪄","👑"][COLLECTIONS_LIST.indexOf(c)] })) },
+  { label: "Shop",                   href: "/shop",           icon: ShoppingBag, sub: SHOP_CATEGORIES.slice(0,-1).map(c => ({ label: c.label, href: c.href })) },
+  { label: "Categories",             href: "/categories",     icon: LayoutGrid,  sub: CATEGORIES_GRID.map(c => ({ label: c.label, href: c.href })) },
+  { label: "Collections",            href: "/collections",    icon: Layers,      sub: COLLECTIONS_LIST.map(c => ({ label: c.label, href: c.href })) },
   { label: "New Arrivals",           href: "/new-arrivals",   icon: Sparkles,  sub: null },
   { label: "Best Sellers",           href: "/best-sellers",   icon: Star,      sub: null },
   { label: "Manufacturing Excellence", href: "/manufacturing", icon: Award,     sub: null },
@@ -471,7 +482,9 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
                                   <Link key={sub.label} href={sub.href} onClick={onClose}
                                     className="flex items-center gap-3.5 px-6 py-2.5 transition-colors active:bg-[#EDE8E0]"
                                     style={{ minHeight: 44 }}>
-                                    <span className="text-base w-6 text-center">{sub.emoji}</span>
+                                    <svg className="h-3.5 w-3.5 shrink-0 text-[#D4AF37]" viewBox="0 0 12 12" fill="none">
+                                      <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
                                     <span className="text-sm text-[#3A2A20] font-medium">{sub.label}</span>
                                   </Link>
                                 ))}
