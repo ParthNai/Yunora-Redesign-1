@@ -15,8 +15,11 @@ import MobileNav from "@/components/layout/MobileNav";
 import ProductCard from "@/components/ui/ProductCard";
 import CustomizeModal from "@/components/ui/CustomizeModal";
 import RoomVisualizerModal from "@/components/ui/RoomVisualizerModal";
-import { products } from "@/data/products";
+import { products as staticProducts } from "@/data/products";
 import { useCart } from "@/context/CartContext";
+import { useQuery } from "@tanstack/react-query";
+import { api } from "@/lib/api";
+import catBedsheets from "@/assets/cat-bedsheets.png";
 
 /* ─── Static data ─── */
 const COLORS = [
@@ -130,8 +133,31 @@ function Accordion({ title, children, open: controlledOpen }: { title: string; c
 /* ─── Main Component ─── */
 export default function ProductDetail() {
   const { id } = useParams();
-  const product = products.find(p => p.id === Number(id)) || products[1];
-  const related  = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+  const numericId = Number(id);
+
+  const { data: apiProduct } = useQuery({
+    queryKey: ["product", numericId],
+    queryFn: () => api.product(numericId),
+    enabled: !!numericId,
+    staleTime: 5 * 60 * 1000,
+    retry: 1,
+  });
+
+  const staticProduct = staticProducts.find(p => p.id === numericId) || staticProducts[1];
+
+  const product = apiProduct
+    ? {
+        ...staticProduct,
+        id: apiProduct.id,
+        name: apiProduct.name,
+        price: apiProduct.salePrice ?? apiProduct.price,
+        originalPrice: apiProduct.salePrice ? apiProduct.price : staticProduct.originalPrice,
+        image: apiProduct.imageUrl || catBedsheets,
+        category: staticProduct.category,
+      }
+    : staticProduct;
+
+  const related = staticProducts.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
   const { addToCart, toggleWishlist, isInWishlist } = useCart();
 
   const gallery = [product.image, product.image, product.image, product.image, product.image, product.image, product.image, product.image];

@@ -5,9 +5,31 @@ import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileNav from "@/components/layout/MobileNav";
-import { products, categories, type Product } from "@/data/products";
+import { products as staticProducts, categories as staticCategories, type Product } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import hero1 from "@/assets/hero-1.png";
+import catBedsheets from "@/assets/cat-bedsheets.png";
+import { useQuery } from "@tanstack/react-query";
+import { api, type ApiProduct } from "@/lib/api";
+
+function apiToShopProduct(p: ApiProduct): Product {
+  return {
+    id: p.id,
+    name: p.name,
+    price: p.salePrice ?? p.price,
+    originalPrice: p.salePrice ? p.price : undefined,
+    badge: p.salePrice ? `${Math.round((1 - p.salePrice / p.price) * 100)}% OFF` : undefined,
+    rating: 4.5,
+    reviews: 0,
+    category: String(p.categoryId ?? "other"),
+    image: p.imageUrl || catBedsheets,
+    colors: p.color ? [p.color] : [],
+    materials: p.material ? [p.material] : [],
+    sizes: [],
+    inStock: (p.stock ?? 1) > 0,
+    isNew: true,
+  };
+}
 import {
   Search, Filter, ChevronDown, Heart, ShoppingCart, Star,
   Grid2X2, LayoutGrid, X, SlidersHorizontal, Eye, Check,
@@ -338,6 +360,32 @@ function FilterSidebar({
 
 /* ─── MAIN SHOP PAGE ─── */
 export default function Shop() {
+  const { data: apiData, isLoading: loadingProducts } = useQuery({
+    queryKey: ["products", "shop"],
+    queryFn: () => api.products({ limit: 100, page: 1 }),
+    staleTime: 5 * 60 * 1000,
+    retry: 1,
+  });
+
+  const { data: apiCategories } = useQuery({
+    queryKey: ["categories"],
+    queryFn: api.categories,
+    staleTime: 10 * 60 * 1000,
+    retry: 1,
+  });
+
+  const products = useMemo<Product[]>(() => {
+    if (apiData && apiData.items.length > 0) return apiData.items.map(apiToShopProduct);
+    return staticProducts;
+  }, [apiData]);
+
+  const categories = useMemo(() => {
+    if (apiCategories && apiCategories.length > 0) {
+      return apiCategories.map((c) => ({ id: c.id, name: c.name, slug: c.slug, count: 0, image: "" as unknown as string }));
+    }
+    return staticCategories;
+  }, [apiCategories]);
+
   /* Filter state */
   const [selectedCats, setSelectedCats] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 6500]);
@@ -352,7 +400,7 @@ export default function Shop() {
   const [gridCols, setGridCols] = useState<3 | 4>(3);
   const [showMobileFilter, setShowMobileFilter] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
-  const [recentlyViewed] = useState(products.slice(0, 6));
+  const [recentlyViewed] = useState(staticProducts.slice(0, 6));
   const [addedId, setAddedId] = useState<number | null>(null);
 
   /* Live search debounce */

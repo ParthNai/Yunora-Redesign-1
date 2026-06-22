@@ -1,21 +1,34 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { api } from "@/lib/api";
 
-const ITEMS = [
-  { icon: "🚚", text: "Free Shipping on Orders Above ₹999" },
-  { icon: "🔒", text: "Secure Payments" },
-  { icon: "🛡️", text: "10 Year Warranty on Premium Products" },
-  { icon: "✨", text: "Exclusive Collections" },
-  { icon: "⭐", text: "Premium Quality" },
-  { icon: "↩️", text: "Easy Returns" },
-  { icon: "🎁", text: "Festive Offers — Up to 40% Off" },
-  { icon: "💎", text: "Crafted in India · Luxury You Can Feel" },
+const STATIC_ITEMS = [
+  { text: "Free Shipping on Orders Above ₹999" },
+  { text: "Secure Payments" },
+  { text: "10 Year Warranty on Premium Products" },
+  { text: "Exclusive Collections" },
+  { text: "Premium Quality" },
+  { text: "Easy Returns" },
+  { text: "Festive Offers — Up to 40% Off" },
+  { text: "Crafted in India · Luxury You Can Feel" },
 ];
 
-const SPEED   = 0.38; /* px per frame — slow luxury scroll */
-const ITEM_PX = 230;  /* approx px to jump per prev/next click */
+const SPEED   = 0.38;
+const ITEM_PX = 230;
 
 export default function AnnouncementBar() {
+  const { data: offers } = useQuery({
+    queryKey: ["offers"],
+    queryFn: api.offers,
+    staleTime: 5 * 60 * 1000,
+    retry: 1,
+  });
+
+  const ITEMS = offers && offers.length > 0
+    ? offers.map((o) => ({ text: o.text }))
+    : STATIC_ITEMS;
+
   const trackRef   = useRef<HTMLDivElement>(null);
   const offsetRef  = useRef(0);
   const rafRef     = useRef<number>(0);
@@ -23,7 +36,6 @@ export default function AnnouncementBar() {
   const touchX     = useRef(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  /* ── 60fps scroll loop ── */
   useEffect(() => {
     const loop = () => {
       if (!pausedRef.current && trackRef.current) {
@@ -45,7 +57,6 @@ export default function AnnouncementBar() {
   const jumpPrev = () => { offsetRef.current += ITEM_PX; };
   const jumpNext = () => { offsetRef.current -= ITEM_PX; };
 
-  /* Touch swipe */
   const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; pause(); };
   const onTouchMove  = (e: React.TouchEvent) => {
     const dx = e.touches[0].clientX - touchX.current;
@@ -76,7 +87,6 @@ export default function AnnouncementBar() {
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* ── Left arrow (desktop only) ── */}
       <button
         onClick={jumpPrev} aria-label="Previous"
         className="hidden sm:flex items-center justify-center shrink-0 z-10 transition-all hover:opacity-70 active:scale-90"
@@ -84,18 +94,15 @@ export default function AnnouncementBar() {
         <ChevronLeft className="h-3.5 w-3.5 text-[#6B5744]" strokeWidth={2}/>
       </button>
 
-      {/* ── Scrolling track ── */}
       <div className="flex-1 overflow-hidden relative" style={{ maskImage: "linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)" }}>
         <div
           ref={trackRef}
           className="flex items-center whitespace-nowrap will-change-transform"
           style={{ transform: "translate3d(0,0,0)" }}>
-          {/* Two copies for seamless loop */}
           {[...ITEMS, ...ITEMS].map((item, i) => (
             <span key={i} className="inline-flex items-center">
               <span className="inline-flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-[12.5px] font-medium text-[#3A2A20] tracking-[0.02em]"
                 style={{ fontFamily: "'Inter', sans-serif" }}>
-                <span className="text-sm" style={{ lineHeight: 1 }}>{item.icon}</span>
                 {item.text}
               </span>
               {DIVIDER}
@@ -104,7 +111,6 @@ export default function AnnouncementBar() {
         </div>
       </div>
 
-      {/* ── Right arrow + pause (desktop only) ── */}
       <div className="hidden sm:flex items-center shrink-0 z-10" style={{ paddingRight: 8, gap: 2 }}>
         <button onClick={jumpNext} aria-label="Next"
           className="flex items-center justify-center w-6 h-6 rounded-md transition-all hover:bg-[#E8DDD0]/60 active:scale-90">

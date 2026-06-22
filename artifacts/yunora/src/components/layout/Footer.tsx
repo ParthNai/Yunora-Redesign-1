@@ -1,23 +1,40 @@
 import logoWhite from "@assets/01_1781943231369.png";
 import { Link } from "wouter";
 import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { api } from "@/lib/api";
 
 export default function Footer() {
+  const { data: settings } = useQuery({
+    queryKey: ["site-settings"],
+    queryFn: api.siteSettings,
+    staleTime: 10 * 60 * 1000,
+    retry: 1,
+  });
+
+  const address  = settings?.address  || "123 Luxury Lane, Panipat, Haryana 132103, India";
+  const phone    = settings?.phone    || "+91 98765 43210";
+  const email    = settings?.email    || "support@yunora.com";
+  const facebook = settings?.facebook || "#";
+  const instagram= settings?.instagram|| "#";
+  const twitter  = settings?.twitter  || "#";
+  const youtube  = settings?.youtube  || "#";
+
   return (
     <footer className="bg-[#2A1F18] text-[#F3EFE9] pt-16 pb-24 lg:pb-8">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
-          
+
           <div>
             <img src={logoWhite} alt="YUNORA" className="h-10 mb-6" />
             <p className="text-[#F3EFE9]/80 text-sm leading-relaxed mb-6 font-sans font-light">
               Transforming homes with timeless designs, premium fabrics and exceptional craftsmanship. India's premier luxury home furnishing brand.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Facebook className="h-4 w-4" /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Instagram className="h-4 w-4" /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Twitter className="h-4 w-4" /></a>
-              <a href="#" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Youtube className="h-4 w-4" /></a>
+              <a href={facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Facebook className="h-4 w-4" /></a>
+              <a href={instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Instagram className="h-4 w-4" /></a>
+              <a href={twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Twitter className="h-4 w-4" /></a>
+              <a href={youtube} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Youtube className="h-4 w-4" /></a>
             </div>
           </div>
 
@@ -42,7 +59,7 @@ export default function Footer() {
               <li><Link href="/return-policy" className="hover:text-primary transition-colors">Return Policy</Link></li>
               <li><Link href="/track-order" className="hover:text-primary transition-colors">Track Order</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
+              <li><Link href="/terms-conditions" className="hover:text-primary transition-colors">Terms &amp; Conditions</Link></li>
             </ul>
           </div>
 
@@ -51,15 +68,18 @@ export default function Footer() {
             <ul className="space-y-4 font-sans text-sm text-[#F3EFE9]/80 font-light">
               <li className="flex gap-3">
                 <MapPin className="h-5 w-5 shrink-0 text-primary" />
-                <span><Link href="/contact" className="hover:text-primary transition-colors">123 Luxury Lane, Panipat, Haryana 132103, India</Link></span>
+                <span><Link href="/contact" className="hover:text-primary transition-colors">{address}</Link></span>
               </li>
               <li className="flex gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-primary" />
-                <span>+91 98765 43210<br/><span className="text-xs opacity-70">Mon - Sat, 9am - 6pm</span></span>
+                <span>
+                  <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-primary transition-colors">{phone}</a>
+                  <br/><span className="text-xs opacity-70">Mon - Sat, 9am - 6pm</span>
+                </span>
               </li>
               <li className="flex gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-primary" />
-                <span>support@yunora.com</span>
+                <a href={`mailto:${email}`} className="hover:text-primary transition-colors">{email}</a>
               </li>
             </ul>
           </div>

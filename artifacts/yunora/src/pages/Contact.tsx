@@ -59,16 +59,26 @@ function ContactForm() {
     return e;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const e2 = validate();
     setErrors(e2);
     if (Object.keys(e2).length > 0) return;
     setStatus("sending");
-    setTimeout(() => {
+    try {
+      const { api } = await import("@/lib/api");
+      await api.submitLead({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        source: "contact_form",
+        notes: `Subject: ${form.subject}\n\n${form.message}`,
+      });
       setStatus("success");
       setForm({ name: "", phone: "", email: "", subject: "", message: "" });
-    }, 1400);
+    } catch {
+      setStatus("error");
+    }
   };
 
   const field = (k: keyof typeof form) => ({
