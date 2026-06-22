@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Upload, Download, RotateCcw, ZoomIn, ZoomOut, Move, Eye, RefreshCcw } from "lucide-react";
+import { X, Upload, Download, RotateCcw, ZoomIn, ZoomOut, Move, Eye, RefreshCcw, Home, Moon, Utensils } from "lucide-react";
 
 interface Props {
   open: boolean;
@@ -11,10 +11,10 @@ interface Props {
 
 interface Pos { x: number; y: number; w: number; h: number }
 
-const SAMPLE_ROOMS = [
-  { label: "Living Room",  color: "#C9B99A", emoji: "🛋️" },
-  { label: "Bedroom",      color: "#A8BBA8", emoji: "🛏️" },
-  { label: "Dining Room",  color: "#B8A898", emoji: "🍽️" },
+const SAMPLE_ROOMS: { label: string; color: string; icon: React.FC<{ className?: string }> }[] = [
+  { label: "Living Room",  color: "#C9B99A", icon: Home     },
+  { label: "Bedroom",      color: "#A8BBA8", icon: Moon     },
+  { label: "Dining Room",  color: "#B8A898", icon: Utensils },
 ];
 
 export default function RoomVisualizerModal({ open, onClose, productImage, productName }: Props) {
@@ -250,7 +250,7 @@ export default function RoomVisualizerModal({ open, onClose, productImage, produ
                             setPos({ x: 60, y: 60, w: 240, h: 240 });
                           }}
                           className="flex flex-col items-center justify-center gap-1.5 p-3 rounded-xl border border-[#E8DDD0] hover:border-[#D4AF37] hover:bg-[#FAF8F5] transition-all">
-                          <span className="text-2xl">{room.emoji}</span>
+                          {(() => { const RIcon = room.icon; return <RIcon className="h-5 w-5 text-[#6B5744]" />; })()}
                           <span className="text-[10px] font-semibold text-[#6B5744]">{room.label}</span>
                         </button>
                       ))}

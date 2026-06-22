@@ -1,10 +1,14 @@
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { LucideProps } from "lucide-react";
 import {
   X, ChevronRight, ChevronLeft, Check, Upload, MessageCircle,
   Ruler, Palette, Layers, Sparkles, User, Phone, Mail, MapPin,
-  Package, Clock, IndianRupee, ZoomIn, Image as ImageIcon, Send
+  Package, Clock, IndianRupee, ZoomIn, Image as ImageIcon, Send,
+  Wind, Moon, Gem, Utensils, Home, FileText, Truck, Minus, Award, Crown
 } from "lucide-react";
+
+type LucideIcon = React.FC<LucideProps>;
 
 /* ─── Types ─── */
 interface CustomFormData {
@@ -29,15 +33,15 @@ const EMPTY: CustomFormData = {
 };
 
 /* ─── Option data ─── */
-const PRODUCT_TYPES = [
-  { id: "curtains",       label: "Curtains",       icon: "🪟" },
-  { id: "bedsheets",      label: "Bedsheets",      icon: "🛏️" },
-  { id: "comforters",     label: "Comforters",     icon: "🌙" },
-  { id: "sofa-fabrics",   label: "Sofa Fabric",    icon: "🛋️" },
-  { id: "cushions",       label: "Cushions",       icon: "🪑" },
-  { id: "dining-covers",  label: "Dining Cover",   icon: "🍽️" },
-  { id: "home-decor",     label: "Home Decor",     icon: "🏠" },
-  { id: "custom",         label: "Custom Product", icon: "✨" },
+const PRODUCT_TYPES: { id: string; label: string; icon: LucideIcon }[] = [
+  { id: "curtains",       label: "Curtains",       icon: Wind      },
+  { id: "bedsheets",      label: "Bedsheets",      icon: Layers    },
+  { id: "comforters",     label: "Comforters",     icon: Moon      },
+  { id: "sofa-fabrics",   label: "Sofa Fabric",    icon: Gem       },
+  { id: "cushions",       label: "Cushions",       icon: Package   },
+  { id: "dining-covers",  label: "Dining Cover",   icon: Utensils  },
+  { id: "home-decor",     label: "Home Decor",     icon: Home      },
+  { id: "custom",         label: "Custom Product", icon: Sparkles  },
 ];
 
 const FABRICS = [
@@ -66,13 +70,13 @@ const COLORS = [
   { id: "custom",    label: "Custom Color",hex: "" },
 ];
 
-const DESIGNS = [
-  { id: "modern",   label: "Modern",   desc: "Clean lines, minimal" },
-  { id: "minimal",  label: "Minimal",  desc: "Simple & elegant" },
-  { id: "classic",  label: "Classic",  desc: "Timeless style" },
-  { id: "luxury",   label: "Luxury",   desc: "Opulent details" },
-  { id: "royal",    label: "Royal",    desc: "Grand & ornate" },
-  { id: "custom",   label: "Custom",   desc: "Your own design" },
+const DESIGNS: { id: string; label: string; desc: string; icon: LucideIcon }[] = [
+  { id: "modern",   label: "Modern",   desc: "Clean lines, minimal",  icon: Layers   },
+  { id: "minimal",  label: "Minimal",  desc: "Simple & elegant",      icon: Minus    },
+  { id: "classic",  label: "Classic",  desc: "Timeless style",        icon: Clock    },
+  { id: "luxury",   label: "Luxury",   desc: "Opulent details",       icon: Award    },
+  { id: "royal",    label: "Royal",    desc: "Grand & ornate",        icon: Crown    },
+  { id: "custom",   label: "Custom",   desc: "Your own design",       icon: Palette  },
 ];
 
 const UNITS = ["cm", "inch", "feet"];
@@ -251,7 +255,7 @@ export default function CustomizeModal({ open, onClose, productName, productType
             <AnimatePresence mode="wait">
               {submitted ? (
                 <motion.div key="success" initial={{ opacity: 0, scale: 0.92 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center justify-center text-center py-12 gap-5">
-                  <div className="w-20 h-20 rounded-full bg-[#D4AF37]/15 flex items-center justify-center text-4xl">✨</div>
+                  <div className="w-20 h-20 rounded-full bg-[#D4AF37]/15 flex items-center justify-center"><Sparkles className="h-9 w-9 text-[#D4AF37]" /></div>
                   <div>
                     <h3 className="text-2xl font-bold text-[#3A2A20] mb-2" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Request Submitted!</h3>
                     <p className="text-sm text-[#6B5744] max-w-sm">Our design expert will contact you within 30 minutes with a personalized quote.</p>
@@ -271,15 +275,18 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 1 — Product Type */}
                   {step === 1 && (
                     <div>
-                      <StepHeader icon="🛋️" title="Select Product Type" desc="What would you like to customize?" />
+                      <StepHeader icon={Package} title="Select Product Type" desc="What would you like to customize?" />
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
-                        {PRODUCT_TYPES.map(p => (
-                          <button key={p.id} onClick={() => set("productType", p.id)}
-                            className={`flex flex-col items-center gap-2 p-4 rounded-2xl border-2 text-center transition-all ${form.productType === p.id ? "border-[#3A2A20] bg-[#3A2A20] text-white" : "border-[#E8DDD0] bg-white text-[#3A2A20] hover:border-[#D4AF37]"}`}>
-                            <span className="text-2xl">{p.icon}</span>
-                            <span className="text-xs font-bold tracking-wide">{p.label}</span>
-                          </button>
-                        ))}
+                        {PRODUCT_TYPES.map(p => {
+                          const PIcon = p.icon;
+                          return (
+                            <button key={p.id} onClick={() => set("productType", p.id)}
+                              className={`flex flex-col items-center gap-2 p-4 rounded-2xl border-2 text-center transition-all ${form.productType === p.id ? "border-[#3A2A20] bg-[#3A2A20] text-white" : "border-[#E8DDD0] bg-white text-[#3A2A20] hover:border-[#D4AF37]"}`}>
+                              <PIcon className="h-5 w-5" />
+                              <span className="text-xs font-bold tracking-wide">{p.label}</span>
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -287,7 +294,7 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 2 — Measurements */}
                   {step === 2 && (
                     <div>
-                      <StepHeader icon="📐" title="Enter Measurements" desc="Enter your exact dimensions for a perfect fit" />
+                      <StepHeader icon={Ruler} title="Enter Measurements" desc="Enter your exact dimensions for a perfect fit" />
                       <div className="mt-5 grid sm:grid-cols-2 gap-4">
                         <MeasureField label="Width *" value={form.width} unit={form.widthUnit}
                           onValue={v => set("width", v)} onUnit={v => set("widthUnit", v)} placeholder="e.g. 60" />
@@ -316,7 +323,7 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 3 — Fabric */}
                   {step === 3 && (
                     <div>
-                      <StepHeader icon="🧵" title="Select Fabric" desc="Choose from our premium fabric collection" />
+                      <StepHeader icon={Layers} title="Select Fabric" desc="Choose from our premium fabric collection" />
                       <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
                         {FABRICS.map(f => (
                           <button key={f.id} onClick={() => set("fabric", f.id)}
@@ -339,7 +346,7 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 4 — Color */}
                   {step === 4 && (
                     <div>
-                      <StepHeader icon="🎨" title="Select Color" desc="Choose your preferred color from our luxury palette" />
+                      <StepHeader icon={Palette} title="Select Color" desc="Choose your preferred color from our luxury palette" />
                       <div className="mt-5 grid grid-cols-3 sm:grid-cols-6 gap-3">
                         {COLORS.map(c => (
                           <button key={c.id} onClick={() => set("color", c.id)}
@@ -361,18 +368,21 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 5 — Design */}
                   {step === 5 && (
                     <div>
-                      <StepHeader icon="✨" title="Design Style" desc="Choose the aesthetic that matches your home" />
+                      <StepHeader icon={Sparkles} title="Design Style" desc="Choose the aesthetic that matches your home" />
                       <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        {DESIGNS.map(d => (
-                          <button key={d.id} onClick={() => set("design", d.id)}
-                            className={`flex flex-col gap-2 p-5 rounded-2xl border-2 text-left transition-all ${form.design === d.id ? "border-[#3A2A20] bg-[#3A2A20] text-white" : "border-[#E8DDD0] bg-white text-[#3A2A20] hover:border-[#D4AF37]"}`}>
-                            <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-lg ${form.design === d.id ? "bg-white/15" : "bg-[#F5F0EA]"}`}>
-                              {d.id === "modern" ? "⬛" : d.id === "minimal" ? "◽" : d.id === "classic" ? "🏛️" : d.id === "luxury" ? "👑" : d.id === "royal" ? "🔮" : "🎨"}
-                            </div>
-                            <p className="text-sm font-bold">{d.label}</p>
-                            <p className={`text-xs ${form.design === d.id ? "text-white/65" : "text-[#9E8A78]"}`}>{d.desc}</p>
-                          </button>
-                        ))}
+                        {DESIGNS.map(d => {
+                          const DIcon = d.icon;
+                          return (
+                            <button key={d.id} onClick={() => set("design", d.id)}
+                              className={`flex flex-col gap-2 p-5 rounded-2xl border-2 text-left transition-all ${form.design === d.id ? "border-[#3A2A20] bg-[#3A2A20] text-white" : "border-[#E8DDD0] bg-white text-[#3A2A20] hover:border-[#D4AF37]"}`}>
+                              <div className={`w-8 h-8 rounded-xl flex items-center justify-center ${form.design === d.id ? "bg-white/15" : "bg-[#F5F0EA]"}`}>
+                                <DIcon className={`h-4 w-4 ${form.design === d.id ? "text-white" : "text-[#D4AF37]"}`} />
+                              </div>
+                              <p className="text-sm font-bold">{d.label}</p>
+                              <p className={`text-xs ${form.design === d.id ? "text-white/65" : "text-[#9E8A78]"}`}>{d.desc}</p>
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -380,7 +390,7 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 6 — Special Requirements */}
                   {step === 6 && (
                     <div>
-                      <StepHeader icon="📝" title="Special Requirements" desc="Tell us anything specific about your order" />
+                      <StepHeader icon={FileText} title="Special Requirements" desc="Tell us anything specific about your order" />
                       <div className="mt-5">
                         <textarea
                           value={form.specialRequirements}
@@ -405,7 +415,7 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 7 — Upload Files */}
                   {step === 7 && (
                     <div>
-                      <StepHeader icon="📁" title="Upload Files" desc="Share room photos, reference images or design sketches" />
+                      <StepHeader icon={Upload} title="Upload Files" desc="Share room photos, reference images or design sketches" />
                       <div className="mt-5">
                         <div
                           onDragOver={e => { e.preventDefault(); setDragOver(true); }}
@@ -426,7 +436,7 @@ export default function CustomizeModal({ open, onClose, productName, productType
                                 {f.type?.startsWith("image/") ? (
                                   <img src={URL.createObjectURL(f)} className="w-full h-full object-cover" alt="" />
                                 ) : (
-                                  <div className="text-2xl">📄</div>
+                                  <FileText className="h-6 w-6 text-[#9E8A78]" />
                                 )}
                                 <button onClick={e => { e.stopPropagation(); const arr = [...(form.files as unknown as File[])]; arr.splice(i,1); set("files", arr as unknown as File[]); }}
                                   className="absolute top-1 right-1 w-5 h-5 rounded-full bg-[#3A2A20]/70 text-white text-xs flex items-center justify-center hover:bg-red-600 transition-colors">
@@ -445,7 +455,7 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 8 — Customer Details */}
                   {step === 8 && (
                     <div>
-                      <StepHeader icon="👤" title="Your Details" desc="So we can send you a personalized quote" />
+                      <StepHeader icon={User} title="Your Details" desc="So we can send you a personalized quote" />
                       <div className="mt-5 grid sm:grid-cols-2 gap-4">
                         <TextInput label="Full Name *" value={form.name} onChange={v => set("name", v)} placeholder="Your full name" icon={User} />
                         <TextInput label="Phone Number *" value={form.phone} onChange={v => set("phone", v)} placeholder="+91 98765 43210" icon={Phone} type="tel" />
@@ -468,15 +478,15 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 9 — Live Estimate */}
                   {step === 9 && (
                     <div>
-                      <StepHeader icon="💰" title="Your Live Estimate" desc="Based on your selections — final quote may vary slightly" />
+                      <StepHeader icon={IndianRupee} title="Your Live Estimate" desc="Based on your selections — final quote may vary slightly" />
                       <div className="mt-5 grid sm:grid-cols-2 gap-4">
-                        <EstCard icon="🧵" label="Fabric Requirement" value={est.fabReq} color="#D4AF37" />
-                        <EstCard icon="⏱️" label="Production Time"    value={`${est.days} business days`} color="#6B9E6E" />
-                        <EstCard icon="💸" label="Price Range"        value={`₹${est.low.toLocaleString("en-IN")} – ₹${est.high.toLocaleString("en-IN")}`} color="#F47C4D" big />
-                        <EstCard icon="🚚" label="Shipping"           value="Free Nationwide Shipping" color="#3A2A20" />
+                        <EstCard icon={Layers}      label="Fabric Requirement" value={est.fabReq} color="#D4AF37" />
+                        <EstCard icon={Clock}       label="Production Time"    value={`${est.days} business days`} color="#6B9E6E" />
+                        <EstCard icon={IndianRupee} label="Price Range"        value={`₹${est.low.toLocaleString("en-IN")} – ₹${est.high.toLocaleString("en-IN")}`} color="#F47C4D" big />
+                        <EstCard icon={Truck}       label="Shipping"           value="Free Nationwide Shipping" color="#3A2A20" />
                       </div>
                       <div className="mt-5 p-4 bg-[#F5F0EA] rounded-2xl border border-[#E8DDD0] text-xs text-[#6B5744]">
-                        <p className="font-bold text-[#3A2A20] mb-1.5">📋 Order Summary</p>
+                        <p className="font-bold text-[#3A2A20] mb-1.5">Order Summary</p>
                         <div className="grid sm:grid-cols-2 gap-x-6 gap-y-1">
                           <Row k="Product"  v={PRODUCT_TYPES.find(p => p.id === form.productType)?.label || "—"} />
                           <Row k="Size"     v={form.width && form.height ? `${form.width}${form.widthUnit} × ${form.height}${form.heightUnit}` : "—"} />
@@ -493,7 +503,7 @@ export default function CustomizeModal({ open, onClose, productName, productType
                   {/* STEP 10 — Submit */}
                   {step === 10 && (
                     <div>
-                      <StepHeader icon="🎉" title="Submit Your Request" desc="We'll reach out within 30 minutes with your personalized quote" />
+                      <StepHeader icon={Send} title="Submit Your Request" desc="We'll reach out within 30 minutes with your personalized quote" />
                       <div className="mt-6 p-5 bg-white rounded-2xl border border-[#E8DDD0]">
                         <p className="text-xs font-bold text-[#3A2A20] mb-3 tracking-wide">YOUR CUSTOMIZATION REQUEST</p>
                         <div className="grid sm:grid-cols-2 gap-2 text-xs text-[#6B5744]">
@@ -570,14 +580,16 @@ export default function CustomizeModal({ open, onClose, productName, productType
 }
 
 /* ─── Small helper sub-components ─── */
-function StepHeader({ icon, title, desc }: { icon: string; title: string; desc: string }) {
+function StepHeader({ icon: Icon, title, desc }: { icon: LucideIcon; title: string; desc: string }) {
   return (
     <div className="mb-1">
       <div className="flex items-center gap-3 mb-1">
-        <span className="text-2xl">{icon}</span>
+        <div className="w-9 h-9 rounded-xl bg-[#F5F0EA] flex items-center justify-center shrink-0">
+          <Icon className="h-4.5 w-4.5 text-[#D4AF37]" />
+        </div>
         <h3 className="text-xl font-bold text-[#3A2A20]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>{title}</h3>
       </div>
-      <p className="text-sm text-[#9E8A78] ml-10">{desc}</p>
+      <p className="text-sm text-[#9E8A78] ml-12">{desc}</p>
     </div>
   );
 }
@@ -616,11 +628,11 @@ function TextInput({ label, value, onChange, placeholder, icon: Icon, type = "te
   );
 }
 
-function EstCard({ icon, label, value, color, big }: { icon: string; label: string; value: string; color: string; big?: boolean }) {
+function EstCard({ icon: Icon, label, value, color, big }: { icon: LucideIcon; label: string; value: string; color: string; big?: boolean }) {
   return (
     <div className={`flex flex-col gap-2 p-5 rounded-2xl bg-white border border-[#E8DDD0] ${big ? "sm:col-span-2" : ""}`}>
       <div className="flex items-center gap-2">
-        <span className="text-xl">{icon}</span>
+        <Icon className="h-4 w-4 shrink-0" style={{ color }} />
         <p className="text-xs font-semibold text-[#9E8A78] tracking-wide">{label.toUpperCase()}</p>
       </div>
       <p className={`font-bold text-[#3A2A20] ${big ? "text-xl" : "text-base"}`} style={{ color }}>{value}</p>

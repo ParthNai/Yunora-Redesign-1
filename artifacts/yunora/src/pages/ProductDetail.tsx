@@ -769,15 +769,17 @@ export default function ProductDetail() {
             <div className="max-w-2xl">
               <h2 className="text-xl font-bold text-[#3A2A20] mb-5" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Care Instructions</h2>
               <div className="grid gap-3">
-                {[
-                  { e: "🌊", t: "Machine Wash Cold",  d: "Use cold water (30°C) on gentle cycle. Avoid hot water which shrinks fabric." },
-                  { e: "🚫", t: "Do Not Bleach",      d: "Bleach damages fabric and fades color. Use mild detergent only." },
-                  { e: "💨", t: "Tumble Dry Low",     d: "Dry on low heat. Remove promptly to avoid wrinkles." },
-                  { e: "🔥", t: "Iron on Low Heat",   d: "Iron while slightly damp on low heat. Do not iron directly on prints." },
-                  { e: "❄️", t: "Store Clean & Dry",  d: "Store in cool, dry place. Avoid plastic bags — fabric needs to breathe." },
-                ].map(item => (
+                {([
+                  { Icon: RefreshCcw, color: "#3A9BD5", t: "Machine Wash Cold",  d: "Use cold water (30°C) on gentle cycle. Avoid hot water which shrinks fabric." },
+                  { Icon: X,          color: "#D95C5C", t: "Do Not Bleach",      d: "Bleach damages fabric and fades color. Use mild detergent only." },
+                  { Icon: Wind,       color: "#6B9E6E", t: "Tumble Dry Low",     d: "Dry on low heat. Remove promptly to avoid wrinkles." },
+                  { Icon: Zap,        color: "#D4AF37", t: "Iron on Low Heat",   d: "Iron while slightly damp on low heat. Do not iron directly on prints." },
+                  { Icon: Package,    color: "#9E8A78", t: "Store Clean & Dry",  d: "Store in cool, dry place. Avoid plastic bags — fabric needs to breathe." },
+                ] as const).map(item => (
                   <div key={item.t} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-[#E8DDD0]">
-                    <span className="text-xl">{item.e}</span>
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: item.color + "18" }}>
+                      <item.Icon className="h-4 w-4" style={{ color: item.color }} />
+                    </div>
                     <div><p className="text-sm font-bold text-[#3A2A20] mb-0.5">{item.t}</p><p className="text-xs text-[#6B5744] leading-relaxed">{item.d}</p></div>
                   </div>
                 ))}
