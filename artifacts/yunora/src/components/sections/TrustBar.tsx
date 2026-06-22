@@ -1,34 +1,35 @@
-import { Truck, ShieldCheck, CreditCard, HeadphonesIcon } from "lucide-react";
 import { motion } from "framer-motion";
+import { Truck, RefreshCcw, ShieldCheck, Award, BadgeCheck, MessageCircle } from "lucide-react";
+
+const ITEMS = [
+  { icon: Truck,          label: "Free Shipping",    sub: "On Orders Above ₹999" },
+  { icon: RefreshCcw,     label: "Easy Returns",     sub: "Hassle-Free Returns" },
+  { icon: ShieldCheck,    label: "Secure Payments",  sub: "100% Safe & Secure" },
+  { icon: Award,          label: "Premium Quality",  sub: "Luxury You Can Trust" },
+  { icon: BadgeCheck,     label: "10 Year Warranty", sub: "On Premium Products" },
+  { icon: MessageCircle,  label: "24/7 Support",     sub: "We're Here to Help" },
+];
 
 export default function TrustBar() {
-  const features = [
-    { icon: Truck, title: "Free Shipping", subtitle: "On orders above ₹999" },
-    { icon: ShieldCheck, title: "Premium Quality", subtitle: "Crafted with perfection" },
-    { icon: CreditCard, title: "Secure Payments", subtitle: "100% secure transactions" },
-    { icon: HeadphonesIcon, title: "24/7 Support", subtitle: "We're here to help" },
-  ];
-
   return (
-    <div className="relative z-10 mx-4 lg:mx-8 -mt-8 bg-card shadow-[0_4px_24px_rgba(0,0,0,0.08)] border border-border/30">
-      <div className="grid grid-cols-4 divide-x divide-border/30">
-        {features.map((feature, idx) => {
-          const Icon = feature.icon;
-          return (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="flex flex-col items-center justify-center gap-1.5 py-5 px-2 lg:py-7 lg:px-6 text-center"
-            >
-              <Icon className="h-5 w-5 lg:h-6 lg:w-6 text-foreground/50 mb-1" strokeWidth={1.5} />
-              <p className="text-[0.6rem] lg:text-xs font-semibold tracking-wide text-foreground leading-tight">{feature.title}</p>
-              <p className="text-[0.55rem] lg:text-[0.65rem] text-muted-foreground hidden lg:block leading-tight">{feature.subtitle}</p>
+    <div className="bg-white border-y border-[#E8DDD0]">
+      <div className="max-w-[1320px] mx-auto px-4 lg:px-8">
+        <div className="grid grid-cols-3 lg:grid-cols-6 divide-y lg:divide-y-0 lg:divide-x divide-[#E8DDD0]">
+          {ITEMS.map((item, i) => (
+            <motion.div key={item.label}
+              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }}
+              className="flex items-center gap-3 px-4 py-4 lg:py-5 lg:px-5 lg:justify-center">
+              <div className="w-9 h-9 rounded-full bg-[#F5F0EA] flex items-center justify-center shrink-0">
+                <item.icon className="h-4 w-4 text-[#D4AF37]" strokeWidth={1.75}/>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-[#3A2A20] leading-tight">{item.label}</p>
+                <p className="text-[10px] text-[#9E8A78] leading-tight hidden lg:block">{item.sub}</p>
+              </div>
             </motion.div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );
