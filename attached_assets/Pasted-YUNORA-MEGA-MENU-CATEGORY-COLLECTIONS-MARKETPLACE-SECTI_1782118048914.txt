@@ -1,0 +1,307 @@
+YUNORA MEGA MENU + CATEGORY + COLLECTIONS + MARKETPLACE SECTION REFINEMENT
+
+Use the attached reference image as the new design direction.
+
+IMPORTANT:
+
+Current sections contain many small emoji-style icons and stickers.
+
+These look cheap and reduce the luxury feel.
+
+Remove all cartoon icons, emoji icons and random stickers.
+
+Replace them with premium luxury UI elements.
+
+====================================================
+
+GENERAL DESIGN RULE
+
+Less icons.
+
+More elegance.
+
+More whitespace.
+
+More premium photography.
+
+More typography.
+
+Luxury furnishing brand aesthetics.
+
+====================================================
+
+SHOP BY CATEGORY SECTION
+
+Current category icons should be removed.
+
+Instead:
+
+Use a clean checkmark icon only.
+
+Or no icon at all.
+
+Example:
+
+✓ Bedsheets
+
+✓ Curtains
+
+✓ Cushion Covers
+
+✓ Comforters
+
+✓ Quilts & Dohars
+
+✓ Table Linen
+
+✓ Blankets
+
+✓ Mattress Protectors
+
+Typography should be the focus.
+
+Premium spacing.
+
+====================================================
+
+SHOP BY ROOM SECTION
+
+Remove room emojis and cartoon icons.
+
+Use:
+
+Simple luxury checkmarks.
+
+Or minimalist line icons.
+
+Or text only.
+
+Focus on elegance.
+
+====================================================
+
+SHOP BY COLLECTION SECTION
+
+Remove decorative bullet icons.
+
+Use:
+
+Luxury tick marks.
+
+Minimal dividers.
+
+Elegant typography.
+
+====================================================
+
+FEATURED CARD
+
+Current card feels generic.
+
+Redesign as premium editorial banner.
+
+Add:
+
+Luxury furnishing image.
+
+Soft gradient overlay.
+
+Premium headline.
+
+Luxury CTA button.
+
+====================================================
+
+BROWSE CATEGORIES SECTION
+
+Remove all small category stickers.
+
+Replace with:
+
+Real category photography.
+
+Examples:
+
+Bedsheets → Bedsheet image
+
+Curtains → Curtain image
+
+Comforters → Comforter image
+
+Dining → Dining setup image
+
+Cards should feel premium.
+
+Image top.
+
+Category name below.
+
+Product count below.
+
+Hover lift effect.
+
+====================================================
+
+COLLECTIONS SECTION
+
+Remove decorative icons completely.
+
+Instead use:
+
+Luxury photography thumbnail.
+
+Or simple gold tick.
+
+Or no icon.
+
+Collection card should contain:
+
+Collection Name
+
+Short Description
+
+Explore Button
+
+Hover Animation
+
+====================================================
+
+MARKETPLACE SECTION
+
+IMPORTANT
+
+Do NOT use fake Amazon or Flipkart graphics.
+
+Use official brand logos.
+
+Amazon → Official Amazon Logo
+
+Flipkart → Official Flipkart Logo
+
+Myntra → Official Myntra Logo
+
+Ajio → Official Ajio Logo
+
+====================================================
+
+MARKETPLACE CARD DESIGN
+
+Premium white card.
+
+Luxury border.
+
+Subtle shadow.
+
+Official logo centered.
+
+Verified Badge.
+
+View Product Button.
+
+Open In New Tab icon.
+
+====================================================
+
+TRUST FEATURES
+
+Replace icons with:
+
+Luxury outlined icons.
+
+Or simple checkmarks.
+
+Features:
+
+Verified Listing
+
+Authentic Product
+
+Secure Checkout
+
+Original Warranty
+
+Official Brand Store
+
+====================================================
+
+TYPOGRAPHY
+
+Headings:
+
+Playfair Display
+
+Body:
+
+Inter
+
+Luxury spacing.
+
+Proper hierarchy.
+
+====================================================
+
+COLORS
+
+Soft Ivory
+
+Warm Beige
+
+Light Sand
+
+Terracotta Accents
+
+Luxury Gold Highlights
+
+Avoid bright colors.
+
+Avoid cartoon colors.
+
+====================================================
+
+ANIMATIONS
+
+Hover Lift
+
+Fade In
+
+Luxury Scale
+
+Smooth Transition
+
+====================================================
+
+RESPONSIVENESS
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+Everything perfectly aligned.
+
+====================================================
+
+FINAL GOAL
+
+The website should feel like:
+
+Apple × Zara Home × Restoration Hardware × MyTrident
+
+Premium.
+
+Elegant.
+
+Minimal.
+
+Luxury.
+
+Trustworthy.
+
+No cartoon icons.
+
+No cheap stickers.
+
+Use real photography, official logos and premium typography throughout.
