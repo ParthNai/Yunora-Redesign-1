@@ -1,0 +1,473 @@
+YUNORA HEADER & NAVIGATION COMPLETE PREMIUM REDESIGN
+
+Use the attached reference image as the primary design reference.
+
+The current header is not premium enough.
+
+Redesign the entire header and navigation system.
+
+====================================================
+
+TOP ANNOUNCEMENT BAR
+
+IMPORTANT:
+
+Current offer bar disappears while scrolling.
+
+This should NOT happen.
+
+Create a permanent sticky announcement bar.
+
+Always visible.
+
+Desktop:
+Height: 40px
+
+Mobile:
+Height: 32px
+
+Content:
+
+Up To 40% Off On Selected Products
+
+Premium Quality
+
+Secure Payments
+
+Easy Returns
+
+Free Shipping Above ₹999
+
+10 Year Warranty
+
+Exclusive Collections
+
+Admin should be able to edit offers from dashboard.
+
+Auto scrolling marquee effect.
+
+Pause on hover.
+
+Smooth infinite animation.
+
+====================================================
+
+MAIN HEADER
+
+Sticky Header
+
+Glassmorphism
+
+Frosted Blur
+
+Luxury Shadow
+
+White/Ivory Background
+
+Always visible while scrolling.
+
+Header should shrink slightly on scroll but remain visible.
+
+====================================================
+
+LOGO SECTION
+
+Current logo looks too small.
+
+Increase logo visibility.
+
+Desktop:
+
+Logo Width:
+220px–260px
+
+Mobile:
+
+Logo Width:
+140px–170px
+
+Brand should instantly feel premium.
+
+Logo must remain sharp and high quality.
+
+====================================================
+
+NAVIGATION MENU
+
+Current menu text breaks into multiple lines.
+
+This is not acceptable.
+
+Every navigation item must remain on one line.
+
+Proper spacing required.
+
+Desktop Menu:
+
+Home
+
+Shop
+
+Categories
+
+Collections
+
+New Arrivals
+
+Best Sellers
+
+Manufacturing Excellence
+
+Warranty
+
+About Us
+
+Contact Us
+
+Blogs
+
+Become Dealer
+
+====================================================
+
+MEGA MENU SYSTEM
+
+Hovering over menu items should open premium mega menus.
+
+Not basic dropdowns.
+
+Use large luxury mega menus.
+
+====================================================
+
+SHOP MEGA MENU
+
+Column 1
+
+Shop By Category
+
+Bedsheets
+
+Curtains
+
+Cushions
+
+Comforters
+
+Sofa Fabrics
+
+Dining
+
+Decor
+
+Mattress Protectors
+
+Column 2
+
+Shop By Room
+
+Bedroom
+
+Living Room
+
+Dining Room
+
+Kids Room
+
+Guest Room
+
+Outdoor
+
+Column 3
+
+Collections
+
+Royal Heritage
+
+Modern Luxe
+
+Minimal Living
+
+Classic Comfort
+
+Festive Collection
+
+Column 4
+
+Featured Banner
+
+Large luxury furnishing image
+
+CTA button
+
+====================================================
+
+CATEGORIES MEGA MENU
+
+Large category cards.
+
+Image
+
+Title
+
+Product Count
+
+Explore Button
+
+Hover animation.
+
+====================================================
+
+COLLECTIONS MEGA MENU
+
+Large editorial cards.
+
+Luxury imagery.
+
+Collection stories.
+
+Featured collections.
+
+====================================================
+
+HEADER ICONS
+
+Search
+
+Wishlist
+
+Profile
+
+Cart
+
+Track Order
+
+Icons should have:
+
+Hover animation
+
+Notification badges
+
+Luxury tooltip
+
+====================================================
+
+SEARCH EXPERIENCE
+
+Fullscreen search overlay.
+
+Instant search suggestions.
+
+Popular searches.
+
+Recent searches.
+
+Trending products.
+
+====================================================
+
+MOBILE HEADER
+
+Top:
+
+Hamburger Menu
+
+YUNORA Logo
+
+Search
+
+Wishlist
+
+Cart
+
+Perfect spacing.
+
+Premium appearance.
+
+====================================================
+
+MOBILE MENU
+
+Current mobile menu should be replaced completely.
+
+Create a premium fullscreen navigation.
+
+Not a drawer.
+
+Not a simple dropdown.
+
+Luxury slide-in experience.
+
+====================================================
+
+MOBILE MENU CONTENT
+
+Home
+
+Shop
+
+Categories
+
+Collections
+
+New Arrivals
+
+Best Sellers
+
+Manufacturing Excellence
+
+Warranty
+
+About Us
+
+Contact Us
+
+Blogs
+
+Become Dealer
+
+Track Order
+
+Feedback
+
+====================================================
+
+ACCOUNT AREA
+
+Login
+
+Signup
+
+Profile
+
+Wishlist
+
+Orders
+
+Rewards
+
+Logout
+
+====================================================
+
+MOBILE MENU ANIMATION
+
+Open:
+
+Backdrop Blur
+
+Fade In
+
+Slide In
+
+Close:
+
+Fade Out
+
+Slide Out
+
+Smooth 60fps animation.
+
+====================================================
+
+MOBILE ACCORDION MENUS
+
+Shop +
+
+Categories +
+
+Collections +
+
+Each expands smoothly.
+
+Show images and subcategories.
+
+====================================================
+
+BOTTOM TRUST BAR
+
+Show:
+
+Free Shipping
+
+Easy Returns
+
+Secure Payments
+
+Premium Quality
+
+10 Year Warranty
+
+====================================================
+
+RESPONSIVENESS
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+No text wrapping.
+
+No broken menus.
+
+No overlapping elements.
+
+====================================================
+
+UI STYLE
+
+Soft Ivory Background
+
+Warm Beige Accents
+
+Terracotta Highlights
+
+Luxury White Space
+
+Premium Shadows
+
+Glassmorphism
+
+Playfair Display Headings
+
+Inter Body Text
+
+Apple Level UX
+
+Zara Home Inspired
+
+MyTrident Inspired
+
+Restoration Hardware Inspired
+
+====================================================
+
+FUNCTIONALITY
+
+Every menu item must work.
+
+Every page must open.
+
+Mega menus must work.
+
+Search must work.
+
+Cart must work.
+
+Wishlist must work.
+
+Profile must work.
+
+Track Order must work.
+
+Mobile menu must work.
+
+No dead links.
+
+No placeholder navigation.
+
+Create a luxury furnishing brand navigation experience that feels more premium than MyTrident and immediately communicates trust, quality and luxury.
