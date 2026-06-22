@@ -67,7 +67,7 @@ export default function ShippingPolicy() {
 
               <h2>Damages During Transit</h2>
               <p className="font-light">
-                YUNORA ensures all products are securely packaged to withstand transit. However, if you receive a damaged order, please contact our customer service immediately (within 48 hours of delivery) at support@yunora.com with photographic evidence of the damage and packaging. Please save all packaging materials and damaged goods before filing a claim.
+                YUNORA ensures all products are securely packaged to withstand transit. However, if you receive a damaged order, please contact our customer service immediately (within 48 hours of delivery) at info@myyunora.com with photographic evidence of the damage and packaging. Please save all packaging materials and damaged goods before filing a claim.
               </p>
 
             </div>

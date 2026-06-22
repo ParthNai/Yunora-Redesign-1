@@ -349,9 +349,9 @@ const ACCOUNT_LINKS = [
   { label: "Settings",         href: "/profile/settings",  icon: Settings },
 ];
 const QUICK_ACTIONS = [
-  { label: "WhatsApp",  icon: MessageCircle, color: "#25D366", action: () => window.open("https://wa.me/919999999999","_blank") },
-  { label: "Call",      icon: Phone,         color: "#3A2A20", action: () => window.open("tel:+919999999999") },
-  { label: "Email",     icon: Mail,          color: "#D4AF37", action: () => window.open("mailto:support@yunora.in") },
+  { label: "WhatsApp",  icon: MessageCircle, color: "#25D366", action: () => window.open("https://wa.me/919624818530","_blank") },
+  { label: "Call",      icon: Phone,         color: "#3A2A20", action: () => window.open("tel:+919624818530") },
+  { label: "Email",     icon: Mail,          color: "#D4AF37", action: () => window.open("mailto:info@myyunora.com") },
   { label: "Location",  icon: MapPin,        color: "#F47C4D", action: () => {} },
 ];
 const SOCIAL = [

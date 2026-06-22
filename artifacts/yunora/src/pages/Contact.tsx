@@ -269,9 +269,9 @@ export default function Contact() {
                   color: "text-green-500 bg-green-50",
                 },
                 {
-                  icon: Mail, label: "Email Support", value: "hello@yunora.in",
+                  icon: Mail, label: "Email Support", value: "info@myyunora.com",
                   sub: "We reply within 24hrs",
-                  action: () => window.open("mailto:hello@yunora.in"),
+                  action: () => window.open("mailto:info@myyunora.com"),
                   color: "text-primary bg-primary/10",
                 },
                 {
@@ -306,7 +306,7 @@ export default function Contact() {
                   <div className="flex-1 relative min-h-[300px]">
                     <iframe
                       title="YUNORA Store"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.5!2d76.971!3d29.39!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPanipat%2C+Haryana+132103!5e0!3m2!1sen!2sin!4v1"
+                      src="https://maps.google.com/maps?q=13+Behind+Circuit+House+Abu+Highway+Road+Palanpur+Gujarat+385001+India&output=embed"
                       width="100%" height="100%"
                       style={{ border: 0, position: "absolute", inset: 0 }}
                       allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
@@ -319,15 +319,15 @@ export default function Contact() {
                       </div>
                       <div>
                         <p className="font-semibold text-sm">YUNORA Experience Store</p>
-                        <p className="text-sm text-muted-foreground mt-0.5">123, Design Street, New Delhi, India</p>
-                        <a href="https://maps.google.com/?q=New+Delhi+India" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary font-medium mt-1.5 hover:underline underline-offset-2">
+                        <p className="text-sm text-muted-foreground mt-0.5">13, Behind Circuit House, Abu Highway Road, Palanpur - 385001, Gujarat, India</p>
+                        <a href="https://maps.app.goo.gl/joYKhEyobYwhxeLW6?g_st=ac" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary font-medium mt-1.5 hover:underline underline-offset-2">
                           Get Directions <ArrowRight className="h-3 w-3" />
                         </a>
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <a href="https://maps.google.com/?q=Panipat+Haryana" target="_blank" rel="noopener noreferrer" className="flex-1 bg-primary text-white text-center py-2.5 text-xs font-medium tracking-wider uppercase hover:bg-primary/90 transition-colors rounded-sm">Get Directions</a>
-                      <a href="https://maps.google.com/?q=Panipat+Haryana" target="_blank" rel="noopener noreferrer" className="flex-1 border border-border text-foreground text-center py-2.5 text-xs font-medium tracking-wider uppercase hover:border-primary hover:text-primary transition-colors rounded-sm flex items-center justify-center gap-1.5">
+                      <a href="https://maps.app.goo.gl/joYKhEyobYwhxeLW6?g_st=ac" target="_blank" rel="noopener noreferrer" className="flex-1 bg-primary text-white text-center py-2.5 text-xs font-medium tracking-wider uppercase hover:bg-primary/90 transition-colors rounded-sm">Get Directions</a>
+                      <a href="https://maps.app.goo.gl/joYKhEyobYwhxeLW6?g_st=ac" target="_blank" rel="noopener noreferrer" className="flex-1 border border-border text-foreground text-center py-2.5 text-xs font-medium tracking-wider uppercase hover:border-primary hover:text-primary transition-colors rounded-sm flex items-center justify-center gap-1.5">
                         <ExternalLink className="h-3 w-3" /> Open Maps
                       </a>
                     </div>

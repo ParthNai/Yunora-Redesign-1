@@ -12,9 +12,9 @@ export default function Footer() {
     retry: 1,
   });
 
-  const address  = settings?.address  || "123 Luxury Lane, Panipat, Haryana 132103, India";
-  const phone    = settings?.phone    || "+91 98765 43210";
-  const email    = settings?.email    || "support@yunora.com";
+  const address  = settings?.address  || "13, Behind Circuit House, Abu Highway Road, Palanpur - 385001, Gujarat, India";
+  const phone    = settings?.phone    || "+91 96248 18530";
+  const email    = settings?.email    || "info@myyunora.com";
   const facebook = settings?.facebook || "#";
   const instagram= settings?.instagram|| "#";
   const twitter  = settings?.twitter  || "#";

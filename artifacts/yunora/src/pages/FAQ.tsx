@@ -24,7 +24,7 @@ export default function FAQ() {
       { q: "Do you offer international shipping?", a: "Currently, we ship exclusively within India. We are working on expanding our logistics network to serve international customers in the near future." },
       { q: "How can I track my order?", a: "Once your order is dispatched, you will receive an email and SMS with a tracking number and a link to track your shipment. You can also use our Track Order page with your Order ID." },
       { q: "What are the shipping charges?", a: "We offer free standard shipping on all orders above ₹2,000. For orders below this amount, a flat shipping fee of ₹150 applies." },
-      { q: "Can I change my delivery address after placing an order?", a: "Address changes can only be accommodated if the order has not yet been processed for shipping. Please contact our customer support immediately at support@yunora.com for assistance." }
+      { q: "Can I change my delivery address after placing an order?", a: "Address changes can only be accommodated if the order has not yet been processed for shipping. Please contact our customer support immediately at info@myyunora.com for assistance." }
     ],
     returns: [
       { q: "What is your return policy?", a: "We offer a 7-day hassle-free return policy for unused, unwashed products in their original packaging with tags intact. Custom-made items and cut fabrics are non-returnable unless defective." }

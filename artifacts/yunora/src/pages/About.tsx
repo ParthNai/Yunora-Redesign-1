@@ -116,10 +116,10 @@ export default function About() {
                   YUNORA was born from a simple belief — that every home deserves furniture that blends beauty, function and soul. What began as a passion project in 2008 has grown into a modern furnishing brand trusted by thousands.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-8 font-light">
-                  From our state-of-the-art manufacturing facility in Panipat to living rooms across India, we bring craftsmanship, warmth and timeless design to every home we touch.
+                  From our state-of-the-art manufacturing facility in Palanpur, Gujarat to living rooms across India, we bring craftsmanship, warmth and timeless design to every home we touch.
                 </p>
                 <div className="space-y-3 mb-10">
-                  {["Founded in 2008 in Panipat, Haryana", "500+ dealer partners across India", "Exported to 12 countries worldwide", "ISO certified manufacturing facility"].map((t) => (
+                  {["Founded in Palanpur, Gujarat", "500+ dealer partners across India", "Exported to 12 countries worldwide", "ISO certified manufacturing facility"].map((t) => (
                     <div key={t} className="flex items-start gap-3">
                       <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                       <span className="text-sm text-foreground">{t}</span>
@@ -209,7 +209,7 @@ export default function About() {
                   <div className="absolute -bottom-5 -right-5 bg-card border border-border/30 rounded-xl p-4 shadow-xl">
                     <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Est.</p>
                     <p className="font-serif text-3xl text-primary">2008</p>
-                    <p className="text-xs text-muted-foreground">Panipat, Haryana</p>
+                    <p className="text-xs text-muted-foreground">Palanpur, Gujarat</p>
                   </div>
                 </div>
               </FadeUp>
@@ -219,7 +219,7 @@ export default function About() {
                 <span className="text-primary text-xs font-medium tracking-widest uppercase block mb-5">Manufacturing Excellence</span>
                 <h2 className="font-serif text-4xl lg:text-5xl leading-tight mb-6">Crafted With Precision, Made To Last</h2>
                 <p className="text-muted-foreground font-light leading-relaxed mb-8">
-                  At YUNORA's facility in Panipat — India's textile capital — we use state-of-the-art machines alongside time-honoured techniques. Quality isn't just a promise — it's our process.
+                  At YUNORA's facility in Palanpur, Gujarat — we use state-of-the-art machines alongside time-honoured techniques. Quality isn't just a promise — it's our process.
                 </p>
                 <div className="space-y-5">
                   {[
@@ -372,7 +372,7 @@ export default function About() {
                   <img src={catHomeDecor} alt="YUNORA team" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-4 left-4">
-                    <p className="text-white text-sm font-medium">200+ craftspeople at our Panipat facility</p>
+                    <p className="text-white text-sm font-medium">200+ craftspeople at our Palanpur facility</p>
                   </div>
                 </div>
                 <Link href="/manufacturing">
@@ -391,7 +391,7 @@ export default function About() {
                   <div className="relative h-64 bg-muted/30">
                     <iframe
                       title="YUNORA Store Location"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.5!2d76.971!3d29.39!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPanipat%2C+Haryana!5e0!3m2!1sen!2sin!4v1"
+                      src="https://maps.google.com/maps?q=13+Behind+Circuit+House+Abu+Highway+Road+Palanpur+Gujarat+385001+India&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -406,13 +406,13 @@ export default function About() {
                       <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                       <div>
                         <p className="font-semibold text-sm">YUNORA Experience Store</p>
-                        <p className="text-sm text-muted-foreground mt-0.5">123 Luxury Lane, Panipat, Haryana 132103</p>
-                        <p className="text-xs text-muted-foreground mt-0.5">Mon – Sat: 9am – 6pm</p>
+                        <p className="text-sm text-muted-foreground mt-0.5">13, Behind Circuit House, Abu Highway Road, Palanpur - 385001, Gujarat, India</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">Mon – Sun: 10am – 7pm</p>
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <a
-                        href="https://maps.google.com/?q=Panipat,Haryana"
+                        href="https://maps.app.goo.gl/joYKhEyobYwhxeLW6?g_st=ac"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 bg-primary text-white text-center py-2.5 text-xs font-medium tracking-widest uppercase hover:bg-primary/90 transition-colors rounded-sm"
@@ -420,7 +420,7 @@ export default function About() {
                         Get Directions
                       </a>
                       <a
-                        href="https://maps.google.com/?q=Panipat,Haryana"
+                        href="https://maps.app.goo.gl/joYKhEyobYwhxeLW6?g_st=ac"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 border border-border text-foreground text-center py-2.5 text-xs font-medium tracking-widest uppercase hover:border-primary hover:text-primary transition-colors rounded-sm"

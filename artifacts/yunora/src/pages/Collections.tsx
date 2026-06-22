@@ -503,7 +503,7 @@ export default function Collections() {
                     Every collection is a reflection of our passion for beautiful living. We blend craftsmanship, premium materials & timeless aesthetics to create pieces that elevate your everyday.
                   </p>
                   <p className="text-muted-foreground text-sm font-light leading-relaxed mb-8 max-w-md">
-                    From the looms of Panipat to homes across India — each thread carries intention, each design carries heart.
+                    From the workshops of Palanpur, Gujarat to homes across India — each thread carries intention, each design carries heart.
                   </p>
                   <Link href="/about">
                     <button className="inline-flex items-center gap-2 border border-border px-7 py-3.5 text-xs font-medium tracking-wider uppercase hover:border-primary hover:text-primary transition-colors w-fit">

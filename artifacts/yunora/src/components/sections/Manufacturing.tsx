@@ -9,7 +9,7 @@ export default function Manufacturing() {
         <div className="text-center mb-16 lg:mb-24">
           <h2 className="font-serif text-4xl lg:text-6xl text-white mb-6">Crafted with Precision,<br/>Born from Passion</h2>
           <p className="max-w-2xl mx-auto text-white/70 font-light text-lg">
-            Our state-of-the-art manufacturing facilities in Panipat ensure every thread meets the highest standards of luxury.
+            Our state-of-the-art manufacturing facilities in Palanpur, Gujarat ensure every thread meets the highest standards of luxury.
           </p>
         </div>
 
