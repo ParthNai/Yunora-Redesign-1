@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/context/CartContext";
+import { AuthProvider } from "@/context/AuthContext";
 import Preloader from "@/components/Preloader";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -122,6 +123,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <AuthProvider>
         <CartProvider>
           <AnimatePresence>
             {showPreloader && (
@@ -145,6 +147,7 @@ function App() {
             )}
           </AnimatePresence>
         </CartProvider>
+        </AuthProvider>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

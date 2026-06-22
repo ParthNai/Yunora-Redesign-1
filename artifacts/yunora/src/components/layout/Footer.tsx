@@ -1,6 +1,6 @@
 import logoWhite from "@assets/01_1781943231369.png";
 import { Link } from "wouter";
-import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
 
@@ -15,10 +15,8 @@ export default function Footer() {
   const address  = settings?.address  || "13, Behind Circuit House, Abu Highway Road, Palanpur - 385001, Gujarat, India";
   const phone    = settings?.phone    || "+91 96248 18530";
   const email    = settings?.email    || "info@myyunora.com";
-  const facebook = settings?.facebook || "#";
-  const instagram= settings?.instagram|| "#";
-  const twitter  = settings?.twitter  || "#";
-  const youtube  = settings?.youtube  || "#";
+  const instagram = "https://www.instagram.com/myyunora?igsh=MXR0ZzRzd3NqM2k4aA==";
+  const facebook  = "https://www.facebook.com/share/18wcm56hg6/";
 
   return (
     <footer className="bg-[#2A1F18] text-[#F3EFE9] pt-16 pb-24 lg:pb-8">
@@ -31,10 +29,8 @@ export default function Footer() {
               Transforming homes with timeless designs, premium fabrics and exceptional craftsmanship. India's premier luxury home furnishing brand.
             </p>
             <div className="flex items-center gap-4">
-              <a href={facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Facebook className="h-4 w-4" /></a>
               <a href={instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Instagram className="h-4 w-4" /></a>
-              <a href={twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Twitter className="h-4 w-4" /></a>
-              <a href={youtube} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Youtube className="h-4 w-4" /></a>
+              <a href={facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-[#F3EFE9]/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-colors"><Facebook className="h-4 w-4" /></a>
             </div>
           </div>
 

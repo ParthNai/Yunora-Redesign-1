@@ -7,7 +7,7 @@ import {
   MapPin, Package, Zap, Star, ChevronUp,
   Home, Phone, Mail, MessageCircle, LogOut, Gift, Layers, LayoutGrid,
   BookOpen, Briefcase, Settings, Info, Crown, Tag, Instagram, Facebook,
-  Youtube, Bookmark, Sparkles
+  Bookmark, Sparkles
 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import logo from "@assets/02_1781943228013.png";
@@ -355,9 +355,8 @@ const QUICK_ACTIONS = [
   { label: "Location",  icon: MapPin,        color: "#F47C4D", action: () => {} },
 ];
 const SOCIAL = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook,  href: "#", label: "Facebook" },
-  { icon: Youtube,   href: "#", label: "YouTube" },
+  { icon: Instagram, href: "https://www.instagram.com/myyunora?igsh=MXR0ZzRzd3NqM2k4aA==", label: "Instagram" },
+  { icon: Facebook,  href: "https://www.facebook.com/share/18wcm56hg6/", label: "Facebook" },
 ];
 const TRUST_ITEMS = [
   { icon: Truck,       label: "Free Shipping" },

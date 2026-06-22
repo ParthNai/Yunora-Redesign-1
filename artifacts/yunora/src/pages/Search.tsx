@@ -13,6 +13,8 @@ import {
   ArrowRight, Loader2, Tag
 } from "lucide-react";
 import catBedsheets from "@/assets/cat-bedsheets.png";
+import { useAuth } from "@/context/AuthContext";
+import AuthGate from "@/components/ui/AuthGate";
 
 /* ─────────────────────────────────────────
    Natural language query parser
@@ -112,6 +114,7 @@ function SkeletonCard() {
 
 /* ─── Main page ─── */
 export default function SearchPage() {
+  const { isLoggedIn } = useAuth();
   const [location, navigate] = useLocation();
 
   // Parse ?q= from the URL
@@ -177,6 +180,8 @@ export default function SearchPage() {
   }
 
   const loading = isLoading || isFetching;
+
+  if (!isLoggedIn) return <AuthGate />;
 
   return (
     <div className="min-h-screen flex flex-col pb-16 lg:pb-0 bg-[#FDFAF7]">
